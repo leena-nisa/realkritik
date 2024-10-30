@@ -8031,19 +8031,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/leena/.nuget/packages/": {}
+    "C:\\Users\\rymfr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/leena/Desktop/pleasework/MvcMovie/MvcMovie.csproj",
+      "projectUniqueName": "C:\\Users\\rymfr\\Documents\\GitHub\\realkritik\\MvcMovie.csproj",
       "projectName": "MvcMovie",
-      "projectPath": "/Users/leena/Desktop/pleasework/MvcMovie/MvcMovie.csproj",
-      "packagesPath": "/Users/leena/.nuget/packages/",
-      "outputPath": "/Users/leena/Desktop/pleasework/MvcMovie/obj/",
+      "projectPath": "C:\\Users\\rymfr\\Documents\\GitHub\\realkritik\\MvcMovie.csproj",
+      "packagesPath": "C:\\Users\\rymfr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rymfr\\Documents\\GitHub\\realkritik\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/leena/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\rymfr\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -8061,6 +8061,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -8111,7 +8116,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
