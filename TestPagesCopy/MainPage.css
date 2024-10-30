@@ -1,0 +1,102 @@
+body{
+    background-color: black;
+    overflow-x: hidden;
+}
+
+/*this is all the header and stuff below this */
+/**/
+/**/
+.link-list a{
+    color: white;
+    text-decoration: none;
+}
+.link-list{
+    padding-top: 10px;
+    padding-left: 40px;
+}
+#Login{
+    padding-right: 40px;
+    float: right;
+}
+.top-half{
+    background-color: grey;
+    display: block;
+    
+}
+.top-links{
+    width: 90%;
+    float: right;
+}
+.logo{
+    width: 100px;
+    padding: 10px;
+
+}
+.search-bar{
+    justify-content: center;
+   align-items: center;
+    display: flex;
+    padding-bottom: 3px;
+    padding-left: 170px;
+
+    
+    
+}
+.search-input{
+    background: white;
+    height: 20px;
+    box-shadow: none;
+    border: none;
+    width: 600px;
+}
+
+
+/* anythign below is the body of the main page*/
+/**/
+/**/
+/**/
+.movie-cards{   
+    background-color: white;
+    box-sizing: border-box;
+    
+}
+.movie-wrapper{
+    display: block;
+    background: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+.movie-spacing{
+    height: 40px;
+}
+
+.top-picks{
+    min-height: 100vh;
+}
+#top-picks, #horror, #comedy, #romance{
+    width: 24%;
+    float: left;
+}
+.top-name, .horror-name, .comedy-name, .romance-name{
+    height: 20px;
+}
+.horror{
+    min-height: 100vh;
+}
+
+.comedy{
+    min-height: 100vh;
+}
+.romance{
+    min-height: 100vh;
+}
+/*Anything below this is for the footer*/
+/**/
+/**/
+/**/
+
+.footer{
+    min-height: 10vh;
+    background-color: green; 
+}
