@@ -1,0 +1,27 @@
+body{
+    overflow-x: hidden;
+    background-color: black;
+    margin: 0px;
+    display: block;
+}
+/*this is anything having to do witht the top part of accoutn page*/
+.top-banner{
+    background-color: rgb(225, 222, 222);
+}
+.banner{
+    height: 200px;
+}
+.nav-links{
+    background: white;
+    position: relative;
+}
+.nav-container{
+    
+    text-align: center;
+}
+/*Anythign having to deal with the body content of account page*/
+.account-body{
+    background-color: white;
+
+}
+/*Having to deal with the footer of account page*/
