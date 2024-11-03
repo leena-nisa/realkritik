@@ -16,8 +16,14 @@ body{
     position: relative;
 }
 .nav-container{
-    
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    margin-left: 70px;
+}
+.nav-container a{
+    color: gray;
+    text-decoration: none;
 }
 .background-img{
     background-image: url(RyanTestBackground.jpeg);
