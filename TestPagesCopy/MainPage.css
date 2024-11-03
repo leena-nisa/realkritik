@@ -11,11 +11,11 @@ body{
     text-decoration: none;
 }
 .link-list{
-    padding-top: 10px;
+    padding-top: 20px;
     padding-left: 40px;
 }
 #Login{
-    padding-right: 40px;
+    padding-right: 100px;
     float: right;
 }
 #Main{
@@ -27,6 +27,7 @@ body{
 .top-half{
     background-color: grey;
     display: block;
+    height: 200px;
     
 }
 .top-links{
@@ -47,16 +48,20 @@ body{
     display: flex;
     padding-bottom: 3px;
     padding-left: 170px;
+    padding-right: 170px;
+    margin-top: 90px;
 
     
     
 }
 .search-input{
     background: white;
-    height: 20px;
+    height: 70px;
     box-shadow: none;
-    border: none;
+    border: 1px solid gray;
     width: 600px;
+    border-radius: 20px;
+    padding-left: 5px;
 }
 
 /* this is going to be the css for the logo*/
