@@ -19,9 +19,49 @@ body{
     
     text-align: center;
 }
+.background-img{
+    background-image: url(RyanTestBackground.jpeg);
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 35%;
+    height: 200px
+}
+.background-img img{
+    width: 70px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    background: rgba(204, 198, 198, .5);
+    
+}
+.profile-contain{
+    display: flex;
+    
+}
+.profile-name{
+    width: 200px;
+    height: 60px;
+    padding-top: 50px;
+    display: inline-block;
+    color: aliceblue;
+    
+}
+.profile-name h1{
+
+    margin: 0px;
+    width: 100px;
+    
+}
+.profile-pic{
+    width: 125px;
+}
+.profile-pic img{
+    width: 100px;
+}
 /*Anythign having to deal with the body content of account page*/
 .account-body{
     background-color: white;
+    height: 100vh;
 
 }
 /*Having to deal with the footer of account page*/
