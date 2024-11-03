@@ -14,12 +14,14 @@ body{
 .nav-links{
     background: white;
     position: relative;
+    height: 50px;
 }
 .nav-container{
     display: flex;
     justify-content: center;
     gap: 130px;
     margin-left: 70px;
+    padding-top: 14px;
 }
 .nav-container a{
     color: gray;
@@ -37,12 +39,19 @@ body{
     width: 70px;
     margin-bottom: 30px;
     margin-left: 20px;
-    background: rgba(204, 198, 198, .5);
-    
+    background: rgba(204, 198, 198, .5)    
+}
+#logo{
+    width: 70px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    background: rgba(204, 198, 198, .34);
+    border-radius: 50px;
 }
 .profile-contain{
     display: flex;
-    
+    padding-left: 80px;
 }
 .profile-name{
     width: 200px;
@@ -66,7 +75,7 @@ body{
 }
 /*Anythign having to deal with the body content of account page*/
 .account-body{
-    background-color: white;
+    background-color: lightgray;
     height: 100vh;
 
 }
