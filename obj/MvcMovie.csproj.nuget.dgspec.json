@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "g:\\GitHub\\realkritik\\MvcMovie.csproj": {}
+    "c:\\Users\\rymfr\\Documents\\GitHub\\realkritik\\MvcMovie.csproj": {}
   },
   "projects": {
-    "g:\\GitHub\\realkritik\\MvcMovie.csproj": {
+    "c:\\Users\\rymfr\\Documents\\GitHub\\realkritik\\MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "g:\\GitHub\\realkritik\\MvcMovie.csproj",
+        "projectUniqueName": "c:\\Users\\rymfr\\Documents\\GitHub\\realkritik\\MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "g:\\GitHub\\realkritik\\MvcMovie.csproj",
-        "packagesPath": "C:\\Users\\lotec\\.nuget\\packages\\",
-        "outputPath": "g:\\GitHub\\realkritik\\obj\\",
+        "projectPath": "c:\\Users\\rymfr\\Documents\\GitHub\\realkritik\\MvcMovie.csproj",
+        "packagesPath": "C:\\Users\\rymfr\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\rymfr\\Documents\\GitHub\\realkritik\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lotec\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\rymfr\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

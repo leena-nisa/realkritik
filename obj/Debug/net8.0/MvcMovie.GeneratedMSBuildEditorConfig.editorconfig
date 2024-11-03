@@ -17,63 +17,63 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MvcMovie
 build_property.RootNamespace = MvcMovie
-build_property.ProjectDir = g:\GitHub\realkritik\
+build_property.ProjectDir = C:\Users\rymfr\Documents\GitHub\realkritik\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = g:\GitHub\realkritik
+build_property.MSBuildProjectDirectory = C:\Users\rymfr\Documents\GitHub\realkritik
 build_property._RazorSourceGeneratorDebug = 
 
-[g:/GitHub/realkritik/Views/Home/Index.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/Home/Privacy.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/Movies/Create.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Movies/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/Movies/Delete.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Movies/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/Movies/Details.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Movies/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/Movies/Edit.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Movies/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/Movies/Index.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Movies/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/Shared/Error.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/Test/Index.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Test/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/_ViewImports.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/_ViewStart.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/GitHub/realkritik/Views/Shared/_Layout.cshtml]
+[C:/Users/rymfr/Documents/GitHub/realkritik/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-0uvum7rpp4
