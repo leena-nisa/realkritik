@@ -28,16 +28,18 @@ namespace MvcMovie.Controllers
 
         // Action to handle form submission and add a new review
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(Review review)
+        // [ValidateAntiForgeryToken]
+       public async Task<IActionResult> Create(Review review)
         {
+            Console.WriteLine(review);
             if (ModelState.IsValid)
             {
-                _context.Reviews.Add(review); // Add review to the DbContext
-                _context.SaveChanges(); // Save changes to the database
-                return RedirectToAction(nameof(Index)); // Redirect back to the list view
+                await _context.Reviews.AddAsync(review);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-            return View(review);
+
+            return View(review); // Return the view with the review object (pre-populated with user input) for validation errors
         }
     }
 }

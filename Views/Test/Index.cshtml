@@ -1,50 +1,11 @@
 @model MvcMovie.Models.ReviewIndex
 
-<h2>Reviews</h2>
-<ul>
-    @foreach (var review in Model.Reviews)
-    {
-        <li>@review.Score - @review.ReviewDescription</li>
-    }
-</ul>
-
-<div id="myModal" class="modal" syle = "display: none;">
-  <div class="modal-content">
-    <span class="close">&times;</span>   
-        <h2>Add New Review</h2>
-        <form asp-action="Create">
-            <div class="form-group">
-                <label asp-for="NewReview.Score"></label>
-                <input asp-for="NewReview.Score" class="form-control" />
-                <span asp-validation-for="NewReview.Score" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="NewReview.ReviewDescription"></label>
-                <textarea asp-for="NewReview.ReviewDescription" class="form-control"></textarea>
-                <span asp-validation-for="NewReview.ReviewDescription" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="NewReview.status"></label>
-                <input asp-for="NewReview.status" class="form-control" />
-                <span asp-validation-for="NewReview.status" class="text-danger"></span>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-
-  </div>
-</div> 
-
+@{
+    ViewData["Title"] = "Index";
+}
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-
-
-@{
-    ViewData["Title"] = "Index";
 }
 <style>
 
@@ -80,54 +41,63 @@
     }
 </style>
 
-<h1>Test</h1>
+<h2>Reviews</h2>
+@* <ul>
+    @foreach (var review in Model.Reviews)
+    {
+        <li>@review.Score - @review.ReviewDescription</li>
+    }
+</ul> *@
 
+<div id="myModal" class="modal" style = "display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>   
+        <h2>Add New Review</h2>
+        <form asp-action="Create" method="post" id = "myForm">
+            <div class="form-group">
+                <label>Review score</label>
+                <input type ="number" class="form-control" name="Score" id ="Score" />
+
+                <label>Description</label>
+                <textarea class="form-control" name="ReviewDescription" id="ReviewDescription"></textarea> 
+
+                <label>Status</label>
+                <input type ="string" class="form-control" name="status" id ="status" />
+            </div>
+
+
+            <button type="submit" id ="submitButton" class="btn btn-primary">Submit</button>
+        </form>
+  </div>
+</div> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#submitButton").click(function() {
+            var formData = $("#myForm").serialize();
+
+            $.ajax({
+                type: "POST",
+                url: "/TestController/Create",
+                data: formData,
+                success: function(response) {
+                    // Handle the response from the server
+                    console.log(response);
+                    // Update the DOM or trigger other actions as needed
+                },
+                error: function(error) {
+                    // Handle errors
+                    console.error(error);
+                }
+            });
+        });
+    });
+</script>
+
+<h1>Test</h1>
 <button id="openModalButton" style= 'background-color:#f8c735 ; color: #f0f0f0'>Open Modal</button>
 
-
-
-@* <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReleaseDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table> *@
 
 <script>
 // Get the modal
@@ -155,6 +125,15 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}
+
+function displayFormData(){
+    console.log("Hello")
+
+    console.log(document.getElementById("NewReview_Score"));
+    console.log(document.getElementById("NewReview_ReviewDescription"));
+    console.log(document.getElementById("NewReview_status"));
+
 }
 </script>
 
