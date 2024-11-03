@@ -1,0 +1,185 @@
+@model MvcMovie.Models.ReviewIndex
+
+<h2>Reviews</h2>
+<ul>
+    @foreach (var review in Model.Reviews)
+    {
+        <li>@review.Score - @review.ReviewDescription</li>
+    }
+</ul>
+
+<h2>Add New Review</h2>
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="NewReview.Score"></label>
+        <input asp-for="NewReview.Score" class="form-control" />
+        <span asp-validation-for="NewReview.Score" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NewReview.ReviewDescription"></label>
+        <textarea asp-for="NewReview.ReviewDescription" class="form-control"></textarea>
+        <span asp-validation-for="NewReview.ReviewDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NewReview.status"></label>
+        <input asp-for="NewReview.status" class="form-control" />
+        <span asp-validation-for="NewReview.status" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+@* @model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+
+    body {
+        background-color: #0b1622;
+    }
+
+    body * {
+        color: #9fadbd;
+    }
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #151f2e;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%; /* Could be % or px */
+        height: 50%;
+        position: relative; /* To position the close button */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+<h1>Test</h1>
+
+<button id="openModalButton" style= 'background-color:#f8c735 ; color: #f0f0f0'>Open Modal</button>
+
+<div id="myModal" class="modal" syle = "display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>   
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseDate" class="control-label"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+  </div>
+</div> *@
+
+@* <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("openModalButton");   
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+

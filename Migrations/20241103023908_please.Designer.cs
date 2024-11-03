@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MvcMovie.Data;
 
@@ -10,9 +11,11 @@ using MvcMovie.Data;
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
-    partial class MvcMovieContextModelSnapshot : ModelSnapshot
+    [Migration("20241103023908_please")]
+    partial class please
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
@@ -52,9 +55,6 @@ namespace MvcMovie.Migrations
                     b.Property<string>("ReviewDescription")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("ReviewIndexId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("Score")
                         .HasColumnType("INTEGER");
 
@@ -63,48 +63,7 @@ namespace MvcMovie.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ReviewIndexId");
-
                     b.ToTable("Reviews");
-                });
-
-            modelBuilder.Entity("MvcMovie.Models.ReviewIndex", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("NewReviewId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NewReviewId");
-
-                    b.ToTable("ReviewIndex");
-                });
-
-            modelBuilder.Entity("MvcMovie.Models.Review", b =>
-                {
-                    b.HasOne("MvcMovie.Models.ReviewIndex", null)
-                        .WithMany("Reviews")
-                        .HasForeignKey("ReviewIndexId");
-                });
-
-            modelBuilder.Entity("MvcMovie.Models.ReviewIndex", b =>
-                {
-                    b.HasOne("MvcMovie.Models.Review", "NewReview")
-                        .WithMany()
-                        .HasForeignKey("NewReviewId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("NewReview");
-                });
-
-            modelBuilder.Entity("MvcMovie.Models.ReviewIndex", b =>
-                {
-                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }
