@@ -25,7 +25,7 @@ body{
     padding-left: 15px;
 }
 .top-half{
-    background-color: grey;
+    background-color: rgba(128,128,128,1);
     display: block;
     height: 200px;
     

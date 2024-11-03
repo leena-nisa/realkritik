@@ -42,16 +42,17 @@ body{
     background: rgba(204, 198, 198, .5)    
 }
 #logo{
-    width: 70px;
+    width: 80px;
     margin-top: 5px;
     margin-bottom: 30px;
-    margin-left: 20px;
+    margin-left: 12px;
     background: rgba(204, 198, 198, .34);
     border-radius: 50px;
 }
 .profile-contain{
     display: flex;
     padding-left: 80px;
+    margin-top: -21px;
 }
 .profile-name{
     width: 200px;
