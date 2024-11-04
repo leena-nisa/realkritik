@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "g:\\GitHub\\realkritik\\MvcMovie.csproj": {}
+    "/Users/alanruizz/Desktop/380Project/realKritik/MvcMovie.csproj": {}
   },
   "projects": {
-    "g:\\GitHub\\realkritik\\MvcMovie.csproj": {
+    "/Users/alanruizz/Desktop/380Project/realKritik/MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "g:\\GitHub\\realkritik\\MvcMovie.csproj",
+        "projectUniqueName": "/Users/alanruizz/Desktop/380Project/realKritik/MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "g:\\GitHub\\realkritik\\MvcMovie.csproj",
-        "packagesPath": "C:\\Users\\lotec\\.nuget\\packages\\",
-        "outputPath": "g:\\GitHub\\realkritik\\obj\\",
+        "projectPath": "/Users/alanruizz/Desktop/380Project/realKritik/MvcMovie.csproj",
+        "packagesPath": "/Users/alanruizz/.nuget/packages/",
+        "outputPath": "/Users/alanruizz/Desktop/380Project/realKritik/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lotec\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/alanruizz/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -89,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
