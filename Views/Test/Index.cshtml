@@ -2,76 +2,172 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = null;
 }
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+<head>
+    <link rel="stylesheet" href="/css/reviewPage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
 <style>
-
-    body {
-        background-color: #0b1622;
+    .reviews-list {
+        border: 1px solid #ddd; /* Adjust border style and color as needed */
+        padding: 10px; /* Adjust padding for spacing */
+        margin: 10px; /* Adjust margin for positioning */
+        background-color: #151f2e; /* Optional background color */
+        width: 40%;
     }
 
-    body * {
-        color: #9fadbd;
-    }
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        align-items: center;
+    .reviews-list li {
+        margin-bottom: 10px; /* Adjust the margin as needed */
     }
 
-    .modal-content {
-        background-color: #151f2e;
-        margin: 15% auto; /* 15% from the top and centered */
+    .reviews-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Adjust the gap as needed */
+    }
+
+    .review-box {
+        border: 1px solid #ddd;
         padding: 20px;
-        border: 1px solid #888;
-        width: 40%; /* Could be % or px */
-        height: 50%;
-        position: relative; /* To position the close button */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        background-color: #151f2e;
+        margin-bottom: 20px;
     }
+    .review-box:hover {
+        background-color: #0867d2; /* Adjust the hover color as needed */
+    }
+
+    .review-header {
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .review-title {
+    font-weight: bold;
+    }
+
+    .review-description {
+    margin-top: 10px;
+    }
+
+  
 </style>
-
-<h2>Reviews</h2>
-@* <ul>
-    @foreach (var review in Model.Reviews)
-    {
-        <li>@review.Score - @review.ReviewDescription</li>
-    }
-</ul> *@
-
-<div id="myModal" class="modal" style = "display: none;">
-  <div class="modal-content">
-    <span class="close">&times;</span>   
-        <h2>Add New Review</h2>
-        <form asp-action="Create" method="post" id = "myForm">
-            <div class="form-group">
-                <label>Review score</label>
-                <input type ="number" class="form-control" name="Score" id ="Score" />
-
-                <label>Description</label>
-                <textarea class="form-control" name="ReviewDescription" id="ReviewDescription"></textarea> 
-
-                <label>Status</label>
-                <input type ="string" class="form-control" name="status" id ="status" />
+<body>
+    <div class="page-content">
+        <div class="top-banner">
+            <!--within here we will have the Banner in the background, the profile picture and link/logo to homepage-->
+            <div class="banner">
+                <div class="background-img">
+                    <a href="MainPage.html" title="logo">
+                        <img id="logo" src="/img/IMG_0213.png" alt="logo">
+                    </a>
+                    <div class="profile-contain">
+                        <div class="profile-pic">
+                            <img src="/img/ryanTestProfile.jpeg" alt="profile-pic">
+                        </div>
+                        <div class="profile-name">
+                            <h1 class="name">Ryan</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <button class="add-review">Add Review +</button>
+                <div class="nav-container">
+                    <a href="" class="link" id="overview">Overview</a>
+                    <a href="" class="link" id="overview">Your Reviews</a>
+                    <a href="" class="link" id="overview">Favorites</a>
+                    <a href="" class="link" id="overview">Watched</a>
+                </div>
+                
             </div>
 
+        </div>
 
-            <button type="submit" id ="submitButton" class="btn btn-primary">Submit</button>
-        </form>
-  </div>
-</div> 
+        <div class="account-body">
+            <div class="review-form">
+                <h2>Leave a Movie Review</h2>
+                <form asp-action="Create" method="post" id = "myForm">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                    <div class="form-group">
+                        <label for="genre">Genre:</label>
+                        <select class="form-control" name="status" id ="status" required>
+                            <option value="Completed">Completed</option>
+                            <option value="Watching">Watching</option>
+                            <option value="Plan to watch">Plan to watch</option>
+                        </select>
+                    </div>
+                    
+                    @* <div class="form-group">
+                        <label for="title">Movie Title:</label>
+                        <input type="text" id="title" name="title" placeholder="Enter movie title" required>
+                    </div> *@
+                    
+                    <div class="form-group">
+                        <label for="rating">Rating (1 to 10):</label>
+                        <input type="number" name="Score" id ="Score" min="1" max="10" placeholder="Enter your rating" type ="number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Notes/Description:</label>
+                        <textarea name="ReviewDescription" id="ReviewDescription" rows="4" placeholder="Write your review here..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Review</button>
+                    <button class="close-review-form">Close</button>
+                </form>
+            </div>
+
+            <div class="account-wrap">
+                <div class="left-section"></div>
+                <div class="right-section"></div>
+            </div>
+            <ul class="reviews-list">
+                <li><h2>Title         Review Score and Description</h2></li>
+                <div class="reviews-container">
+                    @if (Model.Reviews.Any(r => r.status == "Completed"))
+                    {
+                        <ul style = "list-style-type: none">
+                            @foreach (var review in Model.Reviews.Where(r => r.status == "Completed"))
+                            {
+                            
+
+                                <div class="review-box">
+                                    <div class="review-header">
+                                        <div class="review-title">Review Title</div>
+                                        <div class="review-score">@review.Score</div>
+                                    </div>
+                                    <div class="review-description">
+                                        @review.ReviewDescription
+                                    </div>
+                                </div>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No completed reviews found.</p>
+                    }
+                </div>
+            </ul>
+        </div>
+        
+
+        <div class="footer">
+
+        </div>
+    </div>
+</body>
+
+
+
+
 <script>
     $(document).ready(function() {
         $("#submitButton").click(function() {
@@ -93,47 +189,25 @@
             });
         });
     });
+
+     let reviewForm = document.querySelector(".review-form");
+        console.log(reviewForm);
+
+        let addReviewBtn = document.querySelector(".add-review");
+        console.log(addReviewBtn);
+        let closeReviewForm = document.querySelector(".close-review-form");
+
+        addReviewBtn.addEventListener("click", ()=>{
+                reviewForm.style.display = "block";
+            })
+
+        closeReviewForm.addEventListener("click", ()=>{
+                reviewForm.style.display = "none";
+            })
 </script>
 
-<h1>Test</h1>
-<button id="openModalButton" style= 'background-color:#f8c735 ; color: #f0f0f0'>Open Modal</button>
 
 
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("openModalButton");   
 
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-function displayFormData(){
-    console.log("Hello")
-
-    console.log(document.getElementById("NewReview_Score"));
-    console.log(document.getElementById("NewReview_ReviewDescription"));
-    console.log(document.getElementById("NewReview_status"));
-
-}
-</script>
 
