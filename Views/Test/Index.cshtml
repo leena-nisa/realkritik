@@ -6,65 +6,139 @@
 }
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
 
 <head>
     <link rel="stylesheet" href="/css/reviewPage.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Andale+Mono&display=swap">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <style>
+    body {
+        font-family: 'Andale Mono', monospace;
+    }
+
     .reviews-list {
-        border: 1px solid #ddd; /* Adjust border style and color as needed */
-        padding: 10px; /* Adjust padding for spacing */
-        margin: 10px; /* Adjust margin for positioning */
-        background-color: #151f2e; /* Optional background color */
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        background-color: #151f2e;
         width: 40%;
     }
 
     .reviews-list li {
-        margin-bottom: 10px; /* Adjust the margin as needed */
+        margin-bottom: 10px;
     }
 
     .reviews-container {
         display: flex;
         flex-direction: column;
-        gap: 15px; /* Adjust the gap as needed */
+        gap: 1px;
     }
 
     .review-box {
         border: 1px solid #ddd;
         padding: 20px;
-        background-color: #151f2e;
+        background-color: #161617;
         margin-bottom: 20px;
     }
+
     .review-box:hover {
-        background-color: #0867d2; /* Adjust the hover color as needed */
+        background-color: #0867d2;
+        /* Adjust the hover color as needed */
     }
 
     .review-header {
-    display: flex;
-    justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
     }
 
     .review-title {
-    font-weight: bold;
+        font-weight: bold;
     }
 
     .review-description {
-    margin-top: 10px;
+        margin-top: 10px;
     }
 
-  
+    #logo:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #logo {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-container .link:hover {
+        color: white;
+    }
+
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+
+    }
+
+    .test {
+        background: #161617;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 500px;
+        color: white;
+        transform: scale(0.8);
+        opacity: 0;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .modal-overlay.active .test {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .close-button {
+        position: absolute;
+        /* Absolute position for top-right placement */
+        top: 10px;
+        /* Distance from the top */
+        right: 10px;
+        /* Distance from the right */
+        background: transparent;
+        /* No background */
+        border: none;
+        color: #ddd;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .close-button:hover {
+        color: #fff;
+        /* Change color on hover for better visibility */
+    }
 </style>
+
 <body>
     <div class="page-content">
         <div class="top-banner">
             <!--within here we will have the Banner in the background, the profile picture and link/logo to homepage-->
             <div class="banner">
                 <div class="background-img">
-                    <a href="MainPage.html" title="logo">
+                    
+                    <a asp-area="" asp-controller="Main" asp-action="Index" title="logo">
                         <img id="logo" src="/img/IMG_0213.png" alt="logo">
                     </a>
                     <div class="profile-contain">
@@ -78,72 +152,84 @@
                 </div>
             </div>
             <div class="nav-links">
-                <button class="add-review">Add Review +</button>
+                <button onclick="openModal()" class="add-review">Add Review +</button>
                 <div class="nav-container">
                     <a href="" class="link" id="overview">Overview</a>
                     <a href="" class="link" id="overview">Your Reviews</a>
                     <a href="" class="link" id="overview">Favorites</a>
                     <a href="" class="link" id="overview">Watched</a>
                 </div>
-                
+
             </div>
 
         </div>
 
-        <div class="account-body">
-            <div class="review-form">
-                <h2>Leave a Movie Review</h2>
-                <form asp-action="Create" method="post" id = "myForm">
 
-                    <div class="form-group">
-                        <label for="genre">Genre:</label>
-                        <select class="form-control" name="status" id ="status" required>
-                            <option value="Completed">Completed</option>
-                            <option value="Watching">Watching</option>
-                            <option value="Plan to watch">Plan to watch</option>
-                        </select>
-                    </div>
-                    
-                    @* <div class="form-group">
-                        <label for="title">Movie Title:</label>
-                        <input type="text" id="title" name="title" placeholder="Enter movie title" required>
-                    </div> *@
-                    
-                    <div class="form-group">
-                        <label for="rating">Rating (1 to 10):</label>
-                        <input type="number" name="Score" id ="Score" min="1" max="10" placeholder="Enter your rating" type ="number" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="notes">Notes/Description:</label>
-                        <textarea name="ReviewDescription" id="ReviewDescription" rows="4" placeholder="Write your review here..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Submit Review</button>
-                    <button class="close-review-form">Close</button>
-                </form>
+        <div class="account-body">
+
+            <div class="modal-overlay" id="modalOverlay" style="display:none">
+                <div class="test">
+                    <button class="close-button" onclick="closeModal()">✖</button>
+                    <h1>Leave a Movie Review</h1>
+                    <form asp-action="Create" method="post" id="myForm">
+
+                        <div class="form-group">
+                            <label for="title">Movie Title:</label>
+                            <input type="text" id="title" name="title" placeholder="Enter movie title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status">Status:</label>
+                            <select class="form-control" name="status" id="status" required>
+                                <option value="Completed">Completed</option>
+                                <option value="Watching">Watching</option>
+                                <option value="Plan to watch">Plan to watch</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="rating">Rating (1 to 10):</label>
+                            <input type="number" name="Score" id="Score" min="1" max="10"
+                                placeholder="Enter your rating" type="number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Notes/Description:</label>
+                            <textarea name="ReviewDescription" id="ReviewDescription" rows="4"
+                                placeholder="Write your review here..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit Review</button>
+                    </form>
+
+                </div>
             </div>
+
 
             <div class="account-wrap">
                 <div class="left-section"></div>
                 <div class="right-section"></div>
             </div>
+
             <ul class="reviews-list">
-                <li><h2>Title         Review Score and Description</h2></li>
+                <li>
+                    <h2>Reviews</h2>
+                </li>
                 <div class="reviews-container">
                     @if (Model.Reviews.Any(r => r.status == "Completed"))
                     {
-                        <ul style = "list-style-type: none">
+                        <ul style="list-style-type: none">
                             @foreach (var review in Model.Reviews.Where(r => r.status == "Completed"))
                             {
-                            
+
 
                                 <div class="review-box">
                                     <div class="review-header">
-                                        <div class="review-title">Review Title</div>
-                                        <div class="review-score">@review.Score</div>
+                                        <h2 style="color:whitesmoke" class="review-title">@review.Title</h2>
+                                        <div style="color:whitesmoke" class="review-score">@review.Score</div>
                                     </div>
-                                    <div class="review-description">
+                                    <div style="color:#e3e3e3" class="review-description">
                                         @review.ReviewDescription
                                     </div>
                                 </div>
@@ -155,9 +241,11 @@
                         <p>No completed reviews found.</p>
                     }
                 </div>
+
             </ul>
         </div>
-        
+
+
 
         <div class="footer">
 
@@ -169,45 +257,53 @@
 
 
 <script>
-    $(document).ready(function() {
-        $("#submitButton").click(function() {
+    function openModal() {
+        const modalOverlay = document.getElementById("modalOverlay");
+        modalOverlay.style.display = "flex";
+        setTimeout(() => {
+            modalOverlay.classList.add("active"); // Add active class after a slight delay
+        }, 10);
+    }
+
+    function closeModal() {
+        const modalOverlay = document.getElementById("modalOverlay");
+        modalOverlay.classList.remove("active");
+        setTimeout(() => {
+            modalOverlay.style.display = "none";
+        }, 200);
+    }
+
+    $(document).ready(function () {
+        $("#submitButton").click(function () {
             var formData = $("#myForm").serialize();
 
             $.ajax({
                 type: "POST",
                 url: "/TestController/Create",
                 data: formData,
-                success: function(response) {
-                    // Handle the response from the server
-                    console.log(response);
-                    // Update the DOM or trigger other actions as needed
+                success: function (response) {
+
                 },
-                error: function(error) {
-                    // Handle errors
+                error: function (error) {
+
                     console.error(error);
                 }
             });
         });
     });
 
-     let reviewForm = document.querySelector(".review-form");
-        console.log(reviewForm);
+    /* let reviewForm = document.querySelector(".review-form");
+    console.log(reviewForm);
 
-        let addReviewBtn = document.querySelector(".add-review");
-        console.log(addReviewBtn);
-        let closeReviewForm = document.querySelector(".close-review-form");
+    let addReviewBtn = document.querySelector(".add-review");
+    console.log(addReviewBtn);
+    let closeReviewForm = document.querySelector(".close-review-form");
 
-        addReviewBtn.addEventListener("click", ()=>{
-                reviewForm.style.display = "block";
-            })
+    addReviewBtn.addEventListener("click", () => {
+        reviewForm.style.display = "block";
+    })
 
-        closeReviewForm.addEventListener("click", ()=>{
-                reviewForm.style.display = "none";
-            })
+    closeReviewForm.addEventListener("click", () => {
+        reviewForm.style.display = "none";
+    }) */
 </script>
-
-
-
-
-
-

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\MvcMovie.bundle.scp.css"
     },
     {
+      "Id": "g:\\GitHub\\realkritik\\wwwroot\\css\\mainPage.css",
+      "PackagePath": "staticwebassets\\css\\mainPage.css"
+    },
+    {
       "Id": "g:\\GitHub\\realkritik\\wwwroot\\css\\reviewPage.css",
       "PackagePath": "staticwebassets\\css\\reviewPage.css"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "g:\\GitHub\\realkritik\\wwwroot\\img\\RyanTestBackground.jpeg",
       "PackagePath": "staticwebassets\\img\\RyanTestBackground.jpeg"
+    },
+    {
+      "Id": "g:\\GitHub\\realkritik\\wwwroot\\img\\fight.jpeg",
+      "PackagePath": "staticwebassets\\img\\fight.jpeg"
     },
     {
       "Id": "g:\\GitHub\\realkritik\\wwwroot\\img\\ryanTestProfile.jpeg",

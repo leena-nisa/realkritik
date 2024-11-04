@@ -6,5 +6,6 @@ public class Review
     public string? ReviewDescription { get; set; }
     public string? status { get; set; } 
     public byte[]? ImageData { get; set; }
+    public string? Title { get; set; }
   
 }

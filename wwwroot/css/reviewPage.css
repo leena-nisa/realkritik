@@ -13,7 +13,7 @@ display: block;
     height: 200px;
 }
 .nav-links{
-    background: #151f2e;
+    background: #121212;
     position: relative;
     height: 50px;
     display: flex;
@@ -31,7 +31,7 @@ display: block;
     text-decoration: none;
 }
 .background-img{
-    background-image: url(/wwwroot/img/RyanTestBackground.jpeg);
+    background-image: url(/img/ryanTestBackground.jpeg);
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
@@ -79,7 +79,7 @@ display: block;
 }
 /*Anythign having to deal with the body content of account page*/
 .account-body{
-    background-color: #0b1622;
+    background-color: #000000;
     height: 100vh;
     display: flex;
     justify-content: center;

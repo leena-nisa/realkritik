@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TCi+dF4DBsGIzx19LEYaYoLKXvbsVMxVQfqi5yL31zE=",
+  "Hash": "6fSriD7t6Yj6lhtJ1wtqCbbr3n51+M7w/y+jRqV1DYQ=",
   "Source": "MvcMovie",
   "BasePath": "_content/MvcMovie",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "g:\\GitHub\\realkritik\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MvcMovie.bundle.scp.css"
+    },
+    {
+      "Identity": "g:\\GitHub\\realkritik\\wwwroot\\css\\mainPage.css",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "g:\\GitHub\\realkritik\\wwwroot\\",
+      "BasePath": "_content/MvcMovie",
+      "RelativePath": "css/mainPage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\mainPage.css"
     },
     {
       "Identity": "g:\\GitHub\\realkritik\\wwwroot\\css\\reviewPage.css",
@@ -110,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "g:\\GitHub\\realkritik\\wwwroot\\img\\fight.jpeg",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "g:\\GitHub\\realkritik\\wwwroot\\",
+      "BasePath": "_content/MvcMovie",
+      "RelativePath": "img/fight.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\fight.jpeg"
     },
     {
       "Identity": "g:\\GitHub\\realkritik\\wwwroot\\img\\IMG_0213.png",
