@@ -19,14 +19,12 @@ namespace MvcMovie.Controllers
         {
             var viewModel = new ReviewIndex
             {
-                Reviews = _context.Reviews.ToList(),  // Fetch all reviews from the database
-                NewReview = new Review()  // Initialize a new Review object for the form
+                Reviews = _context.Reviews.ToList(),  
+                NewReview = new Review()  
             };
             return View(viewModel);
         }
         
-
-
         // Action to handle form submission and add a new review
         [HttpPost]
         // [ValidateAntiForgeryToken]
@@ -40,7 +38,7 @@ namespace MvcMovie.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(review); // Return the view with the review object (pre-populated with user input) for validation errors
+            return View(review); // Return the view with the review object (pre-populated with user input)
         }
     }
 }
