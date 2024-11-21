@@ -35,7 +35,7 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
-
+wwwroot/.DS_Store
 
 bin*
 /MvcMovieContext-54a519b7-469b-49ae-a1a4-793bf848741f.db

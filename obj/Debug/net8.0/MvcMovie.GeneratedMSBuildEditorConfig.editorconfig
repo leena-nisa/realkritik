@@ -26,44 +26,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/alanruizz/Desktop/380Project/realKritik
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/alanruizz/Desktop/380Project/realKritik/Views/Home/Account.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BY2NvdW50LmNzaHRtbA==
+[/Users/alanruizz/Desktop/380Project/realKritik/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/alanruizz/Desktop/380Project/realKritik/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/alanruizz/Desktop/380Project/realKritik/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/alanruizz/Desktop/380Project/realKritik/Views/Main/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFpbi9JbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/alanruizz/Desktop/380Project/realKritik/Views/MoviePage/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVQYWdlL0luZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/alanruizz/Desktop/380Project/realKritik/Views/Movies/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0NyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/alanruizz/Desktop/380Project/realKritik/Views/Movies/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0RlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/alanruizz/Desktop/380Project/realKritik/Views/Movies/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0RldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/alanruizz/Desktop/380Project/realKritik/Views/Movies/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0VkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/alanruizz/Desktop/380Project/realKritik/Views/Movies/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/alanruizz/Desktop/380Project/realKritik/Views/Shared/Error.cshtml]
@@ -72,14 +44,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/alanruizz/Desktop/380Project/realKritik/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/alanruizz/Desktop/380Project/realKritik/Views/Test/alan.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVzdC9hbGFuLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/alanruizz/Desktop/380Project/realKritik/Views/Test/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVzdC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/alanruizz/Desktop/380Project/realKritik/Views/_ViewImports.cshtml]

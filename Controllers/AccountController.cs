@@ -1,16 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
-    public class TestController : Controller
+    public class AccountController : Controller
     {
         private readonly MvcMovieContext _context;
 
         // Inject the DbContext (assuming you have it configured)
-        public TestController(MvcMovieContext context)
+        public AccountController(MvcMovieContext context)
         {
             _context = context;
         }
@@ -19,17 +18,14 @@ namespace MvcMovie.Controllers
         {
             var viewModel = new ReviewIndex
             {
-                Reviews = _context.Reviews.ToList(),  // Fetch all reviews from the database
-                NewReview = new Review()  // Initialize a new Review object for the form
+                Reviews = _context.Reviews.ToList(),  
+                NewReview = new Review()  
             };
             return View(viewModel);
         }
         
-
-
         // Action to handle form submission and add a new review
         [HttpPost]
-        // [ValidateAntiForgeryToken]
        public async Task<IActionResult> Create(Review review)
         {
             Console.WriteLine(review);
@@ -40,7 +36,7 @@ namespace MvcMovie.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(review); // Return the view with the review object (pre-populated with user input) for validation errors
+            return View(review); // Return the view with the review object (pre-populated with user input)
         }
     }
 }
