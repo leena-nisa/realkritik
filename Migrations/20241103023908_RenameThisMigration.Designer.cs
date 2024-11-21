@@ -12,7 +12,7 @@ namespace MvcMovie.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
     [Migration("20241103023908_please")]
-    partial class please
+    partial class RenameThisMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

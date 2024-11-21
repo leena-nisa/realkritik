@@ -1,16 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
-    public class TestController : Controller
+    public class AccountController : Controller
     {
         private readonly MvcMovieContext _context;
 
         // Inject the DbContext (assuming you have it configured)
-        public TestController(MvcMovieContext context)
+        public AccountController(MvcMovieContext context)
         {
             _context = context;
         }
@@ -27,7 +26,6 @@ namespace MvcMovie.Controllers
         
         // Action to handle form submission and add a new review
         [HttpPost]
-        // [ValidateAntiForgeryToken]
        public async Task<IActionResult> Create(Review review)
         {
             Console.WriteLine(review);
