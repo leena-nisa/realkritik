@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets/img/ryanTestProfile.jpeg"
     },
     {
+      "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/AddReview.js",
+      "PackagePath": "staticwebassets/js/AddReview.js"
+    },
+    {
       "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

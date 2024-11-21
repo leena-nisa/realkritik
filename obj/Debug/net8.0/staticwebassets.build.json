@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tJg3WOAhzwSVV0iAPSTA7wSJbeSqm8AiOZK5ZJALysY=",
+  "Hash": "EAMJVvuuf7cCXdmbqxjGyRGNJSy9GL8h4ZtVjKQcH/Q=",
   "Source": "MvcMovie",
   "BasePath": "_content/MvcMovie",
   "Mode": "Default",
@@ -224,6 +224,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/img/ryanTestProfile.jpeg"
+    },
+    {
+      "Identity": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/AddReview.js",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/",
+      "BasePath": "_content/MvcMovie",
+      "RelativePath": "js/AddReview.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/AddReview.js"
     },
     {
       "Identity": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/site.js",
