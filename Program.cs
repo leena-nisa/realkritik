@@ -17,7 +17,7 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    
+   
 }
 
 // Configure the HTTP request pipeline.

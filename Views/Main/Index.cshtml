@@ -46,118 +46,20 @@
                     <!--there will be sections for movie types-->
                     <div class="movie-spacing"></div>
 
-                    <section class="top-picks">
-                        <div id="top-picks">
-                            <img class = "moviePoster" src="" alt="some-movie">
-                            <div class="top-name">
-                                <p>BO6 2024</p>
-                            </div>
-                        </div>
-                        <div id="top-picks">
-                            <img class = "moviePoster" src="" alt="some-movie">
-                            <div class="top-name">
-                                <p>BO6 2024</p>
-                            </div>
-                        </div>
-                        <div id="top-picks">
-                            <img src="" alt="some-movie">
-                            <div class="top-name">
-                                <p>BO6 2024</p>
-                            </div>
-                        </div>
-                        <div id="top-picks">
-                            <img src="" alt="some-movie">
-                            <div class="top-name">
-                                <p>BO6 2024</p>
-                            </div>
-                        </div>
-                        <div id="top-picks">
-                            <img src="" alt="some-movie">
-                            <div class="top-name">
-                                <p>BO6 2024</p>
-                            </div>
-                        </div>
-                        <div id="top-picks">
-                            <img src="" alt="some-movie">
-                            <div class="top-name">
-                                <p>BO6 2024</p>
-                            </div>
-                        </div>
-                        <div id="top-picks">
-                            <img src="" alt="some-movie">
-                            <div class="top-name">
-                                <p>BO6 2024</p>
-                            </div>
-                        </div>
-                        <div id="top-picks">
-                            <img src="" alt="some-movie">
-                            <div class="top-name">
-                                <p>BO6 2024</p>
-                            </div>
-                        </div>
+                    <section id="top-picks">  
+                        @* this is where we will have JSONTest.js create our div for top-picks *@
                     </section>
 
-                    <section class="horror">
-                        <div id="horror">
-                            <img src="" alt="some-horror">
-                            <div class="horror-name">
-                                <p>BO4 2022</p>
-                            </div>
-                        </div>
-                        <div id="horror">
-                            <img src="" alt="some-horror">
-                            <div class="horror-name">
-                                <p>BO4 2022</p>
-                            </div>
-                        </div>
-                        <div id="horror">
-                            <img src="" alt="some-horror">
-                            <div class="horror-name">
-                                <p>BO4 2022</p>
-                            </div>
-                        </div>
-                        <div id="horror">
-                            <img src="" alt="some-horror">
-                            <div class="horror-name">
-                                <p>BO4 2022</p>
-                            </div>
-                        </div>
-                        <div id="horror">
-                            <img src="" alt="some-horror">
-                            <div class="horror-name">
-                                <p>BO4 2022</p>
-                            </div>
-                        </div>
-                        <div id="horror">
-                            <img src="" alt="some-horror">
-                            <div class="horror-name">
-                                <p>BO4 2022</p>
-                            </div>
-                        </div>
-                        <div id="horror">
-                            <img src="" alt="some-horror">
-                            <div class="horror-name">
-                                <p>BO4 2022</p>
-                            </div>
-                        </div>
+                    <section id="horror">
+                        @* Same here but for horror genres *@
                     </section>
 
-                    <section class="comedy">
-                        <div id="comedy">
-                            <img src="" alt="some-movie">
-                            <div class="comedy-name">
-                                <p>BO3 2020</p>
-                            </div>
-                        </div>
+                    <section id="comedy">
+                        @* same here but for comedy genres *@
                     </section>
 
-                    <section class="romance">
-                        <div id="romance">
-                            <img src="" alt="some-movie">
-                            <div class="romance-name">
-                                <p>BO3 2020</p>
-                            </div>
-                        </div>
+                    <section id="romance">
+                        @* same here but for romance genres *@
                     </section>
                     
                 </div>
@@ -175,11 +77,12 @@
 </body>
 </html>
 
-<script>
+@* <script>
     document.querySelectorAll("#top-picks").forEach(event => {
         const img = event.querySelector("img");
         if (img) 
          img.src = '/img/fight.jpeg';
     });
    
-</script>
+</script> *@
+<script src="/js/JSONTest.js"></script>

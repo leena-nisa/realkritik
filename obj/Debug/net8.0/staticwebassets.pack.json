@@ -5,20 +5,16 @@
       "PackagePath": "staticwebassets/MvcMovie.bundle.scp.css"
     },
     {
+      "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/css/Account.css",
+      "PackagePath": "staticwebassets/css/Account.css"
+    },
+    {
+      "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/css/Home.css",
+      "PackagePath": "staticwebassets/css/Home.css"
+    },
+    {
       "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/css/mainPage.css",
       "PackagePath": "staticwebassets/css/mainPage.css"
-    },
-    {
-      "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/css/moviePage.css",
-      "PackagePath": "staticwebassets/css/moviePage.css"
-    },
-    {
-      "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/css/reviewPage.css",
-      "PackagePath": "staticwebassets/css/reviewPage.css"
-    },
-    {
-      "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/css/site.css",
-      "PackagePath": "staticwebassets/css/site.css"
     },
     {
       "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/favicon.ico",
@@ -41,8 +37,12 @@
       "PackagePath": "staticwebassets/img/ryanTestProfile.jpeg"
     },
     {
-      "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/AddReview.js",
-      "PackagePath": "staticwebassets/js/AddReview.js"
+      "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/Account.js",
+      "PackagePath": "staticwebassets/js/Account.js"
+    },
+    {
+      "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/JSONTest.js",
+      "PackagePath": "staticwebassets/js/JSONTest.js"
     },
     {
       "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/site.js",
@@ -275,6 +275,10 @@
     {
       "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/movies-2010s.json",
+      "PackagePath": "staticwebassets/movies-2010s.json"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.MvcMovie.Microsoft.AspNetCore.StaticWebAssets.props",
