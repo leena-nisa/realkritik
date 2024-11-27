@@ -17,10 +17,6 @@
       "PackagePath": "staticwebassets\\css\\mainPage.css"
     },
     {
-      "Id": "g:\\GitHub\\realkritik\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
-    },
-    {
       "Id": "g:\\GitHub\\realkritik\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

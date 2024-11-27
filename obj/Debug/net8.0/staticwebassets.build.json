@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "12i6XTuuBIgg5pfCao1mEUZiHlNJdjuuC45EnS9wtfo=",
+  "Hash": "guHitzsTvJGGuD5ufozzNYdx4MnKzp64/xVbH4RyUV0=",
   "Source": "MvcMovie",
   "BasePath": "_content/MvcMovie",
   "Mode": "Default",
@@ -110,25 +110,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\mainPage.css"
-    },
-    {
-      "Identity": "g:\\GitHub\\realkritik\\wwwroot\\css\\site.css",
-      "SourceId": "MvcMovie",
-      "SourceType": "Discovered",
-      "ContentRoot": "g:\\GitHub\\realkritik\\wwwroot\\",
-      "BasePath": "_content/MvcMovie",
-      "RelativePath": "css/site.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
       "Identity": "g:\\GitHub\\realkritik\\wwwroot\\favicon.ico",

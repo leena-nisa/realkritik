@@ -1,5 +1,3 @@
-
-// 
 function openModal() {
     const modalOverlay = document.getElementById("modalOverlay");
     modalOverlay.style.display = "flex";

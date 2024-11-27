@@ -124,6 +124,10 @@
                                     <div class="review-description">
                                         @review.ReviewDescription
                                     </div>
+
+                                    <button class="reviewDetailModalButton" onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))')">
+                                        View Details
+                                    </button>
                                 </div>
                             }
                         </ul>
@@ -137,7 +141,18 @@
             </ul>
         </div>
 
+        <div id="reviewDetailModal" style="display: none; color:aliceblue; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #121212; padding: 20px; border: 1px solid #ccc; z-index: 1000; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            <button onclick="closeReviewDetail()" style="float: right;">X</button>
+            <img id="reviewDetailImage" src="" alt="Review Image" style="width: 100px; height: auto; object-fit: cover; border-radius: 8px;">
+            <div>
+                <div id="reviewDetailTitle" style="font-size: 18px; font-weight: bold;"></div>
+                <div id="reviewDetailScore" style="margin-top: 10px;"></div>
+                <div id="reviewDetailDescription" style="margin-top: 10px;"></div>
+            </div>
+        </div>
 
+  
+        <div id="modalBackdrop" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
 
         <div class="footer">
 
@@ -145,7 +160,25 @@
     </div>
 </body>
 
+<script>
+    function openReviewDetail(title, score, description) {
+        document.getElementById('reviewDetailTitle').textContent = title;
+        document.getElementById('reviewDetailScore').textContent = `Score: ${score}`;
+        document.getElementById('reviewDetailDescription').textContent = description;
 
+        document.getElementById('reviewDetailModal').style.display = 'block';
+        document.getElementById('modalBackdrop').style.display = 'block';
+
+        const imgElement = document.getElementById('reviewDetailImage');
+        imgElement.src = "/img/fight.jpeg";
+    }
+
+    function closeReviewDetail() {
+        document.getElementById('reviewDetailModal').style.display = 'none';
+        document.getElementById('modalBackdrop').style.display = 'none';
+    }
+    document.getElementById('modalBackdrop').addEventListener('click', closeReviewDetail);
+</script>
 
 
 
