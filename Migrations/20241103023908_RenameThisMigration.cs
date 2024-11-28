@@ -5,7 +5,7 @@
 namespace MvcMovie.Migrations
 {
     /// <inheritdoc />
-    public partial class please : Migration
+    public partial class RenameThisMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -5,6 +5,7 @@
       "PackagePath": "staticwebassets/MvcMovie.bundle.scp.css"
     },
     {
+<<<<<<< HEAD
       "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/css/Account.css",
       "PackagePath": "staticwebassets/css/Account.css"
     },
@@ -19,6 +20,22 @@
     {
       "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
+=======
+      "Id": "g:\\GitHub\\realkritik\\wwwroot\\css\\Account.css",
+      "PackagePath": "staticwebassets\\css\\Account.css"
+    },
+    {
+      "Id": "g:\\GitHub\\realkritik\\wwwroot\\css\\Home.css",
+      "PackagePath": "staticwebassets\\css\\Home.css"
+    },
+    {
+      "Id": "g:\\GitHub\\realkritik\\wwwroot\\css\\mainPage.css",
+      "PackagePath": "staticwebassets\\css\\mainPage.css"
+    },
+    {
+      "Id": "g:\\GitHub\\realkritik\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+>>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
     },
     {
       "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/img/IMG_0213.png",
@@ -37,8 +54,17 @@
       "PackagePath": "staticwebassets/img/ryanTestProfile.jpeg"
     },
     {
+<<<<<<< HEAD
       "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/Account.js",
       "PackagePath": "staticwebassets/js/Account.js"
+=======
+      "Id": "g:\\GitHub\\realkritik\\wwwroot\\js\\Account.js",
+      "PackagePath": "staticwebassets\\js\\Account.js"
+    },
+    {
+      "Id": "g:\\GitHub\\realkritik\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+>>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
     },
     {
       "Id": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/JSONTest.js",

@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "Jti/p3aLx35bAEBFhvOius43D2pxVDNqemtlbhczOGM=",
+=======
+  "Hash": "guHitzsTvJGGuD5ufozzNYdx4MnKzp64/xVbH4RyUV0=",
+>>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
   "Source": "MvcMovie",
   "BasePath": "_content/MvcMovie",
   "Mode": "Default",
@@ -55,7 +59,49 @@
       "OriginalItemSpec": "/Users/alanruizz/Desktop/380Project/realKritik/obj/Debug/net8.0/scopedcss/projectbundle/MvcMovie.bundle.scp.css"
     },
     {
+<<<<<<< HEAD
       "Identity": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/css/Account.css",
+=======
+      "Identity": "g:\\GitHub\\realkritik\\wwwroot\\css\\Account.css",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "g:\\GitHub\\realkritik\\wwwroot\\",
+      "BasePath": "_content/MvcMovie",
+      "RelativePath": "css/Account.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Account.css"
+    },
+    {
+      "Identity": "g:\\GitHub\\realkritik\\wwwroot\\css\\Home.css",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "g:\\GitHub\\realkritik\\wwwroot\\",
+      "BasePath": "_content/MvcMovie",
+      "RelativePath": "css/Home.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Home.css"
+    },
+    {
+      "Identity": "g:\\GitHub\\realkritik\\wwwroot\\css\\mainPage.css",
+>>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
       "SourceId": "MvcMovie",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/",
@@ -112,10 +158,17 @@
       "OriginalItemSpec": "wwwroot/css/mainPage.css"
     },
     {
+<<<<<<< HEAD
       "Identity": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/favicon.ico",
       "SourceId": "MvcMovie",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/",
+=======
+      "Identity": "g:\\GitHub\\realkritik\\wwwroot\\favicon.ico",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "g:\\GitHub\\realkritik\\wwwroot\\",
+>>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
       "BasePath": "_content/MvcMovie",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -207,7 +260,30 @@
       "OriginalItemSpec": "wwwroot/img/ryanTestProfile.jpeg"
     },
     {
+<<<<<<< HEAD
       "Identity": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/js/Account.js",
+=======
+      "Identity": "g:\\GitHub\\realkritik\\wwwroot\\js\\Account.js",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "g:\\GitHub\\realkritik\\wwwroot\\",
+      "BasePath": "_content/MvcMovie",
+      "RelativePath": "js/Account.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Account.js"
+    },
+    {
+      "Identity": "g:\\GitHub\\realkritik\\wwwroot\\js\\site.js",
+>>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
       "SourceId": "MvcMovie",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/alanruizz/Desktop/380Project/realKritik/wwwroot/",

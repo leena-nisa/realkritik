@@ -1,4 +1,11 @@
 namespace MvcMovie.Models;
+    /// <summary>
+    /// Represents a user-submitted review for an item, such as a movie.
+    /// </summary>
+    /// <remarks>
+    /// This model stores the review details, including the score, description, 
+    /// status, and optional image data.
+    /// </remarks>
 public class Review
 {
     public int Id { get; set; }

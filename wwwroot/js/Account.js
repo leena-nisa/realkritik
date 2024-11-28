@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 // 
+=======
+>>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
 function openModal() {
     const modalOverlay = document.getElementById("modalOverlay");
     modalOverlay.style.display = "flex";
