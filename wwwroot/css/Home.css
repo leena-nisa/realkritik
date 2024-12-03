@@ -1,27 +1,27 @@
 
 body {
-    background-image: url('/img/background.png');    
-    background-size: cover; /* Makes the image cover the entire viewport */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents tiling */
-    display: flex;
-    flex-direction: column;
+    background-image: url('/img/background.png'); /* Assigns body background */  
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    display: flex; 
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; 
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+    overflow: hidden; /* Disables scrolling */ 
 }
 
 .header{
     color: #E50914;
     display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    height: 10%;
+    justify-content: flex-start; /* Assigns content to the left (start) */ 
+    align-content: center; /* Alligns content in the middle (vertically) */
+    height: 10%; 
     width: 100vw;
-    padding-left: 200px;
+    padding-left: 200px; 
     font-size: 32px;
     margin-bottom: 150px;
 }
@@ -32,9 +32,9 @@ body {
     height: 50%;
     display: flex;
     margin-bottom: 100px; 
-    gap: 20px;
-    color:white;
-    background-color: rgba(0, 0, 0, 0.5);
+    gap: 20px; 
+    color:white; 
+    background-color: rgba(0, 0, 0, 0.5); /* 0.5 assigns 50% opacity */
 }
 
 .left-container, .right-container{
@@ -54,7 +54,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-evenly; /* Spaces out elements */
     padding: 20px;
     gap: 20px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -78,7 +78,7 @@ body {
     height: 40px;
     width: 170px;
     font-size: 16px;
-    transition: 0.1s;
+    transition: 0.1s; /* transition IN */
     border: 1px solid white;
     border-radius: 5px;
     color: white;
@@ -94,7 +94,7 @@ body {
     background-color: rgb(48, 88, 158);
     color: white;
     cursor:pointer;
-    transition: 0.1s;
+    transition: 0.1s; /* transition OUT */
 }
 
 #username, #password{
