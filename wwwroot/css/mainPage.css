@@ -74,6 +74,10 @@ body{
     width:100px;
     height: 100px;
 }
+#horror img{
+    width:100px;
+    height: 100px;
+}
 
 /* anythign below is the body of the main page*/
 /**/
@@ -95,24 +99,24 @@ body{
     height: 40px;
 }
 
-.top-picks{
+#top-picks{
     min-height: 100vh;
 }
-#top-picks, #horror, #comedy, #romance{
+.top-picks, .horror, .comedy, .romance{
     width: 24%;
     float: left;
 }
 .top-name, .horror-name, .comedy-name, .romance-name{
     height: 20px;
 }
-.horror{
+#horror{
     min-height: 100vh;
 }
 
-.comedy{
+#comedy{
     min-height: 100vh;
 }
-.romance{
+#romance{
     min-height: 100vh;
 }
 /*Anything below this is for the footer*/

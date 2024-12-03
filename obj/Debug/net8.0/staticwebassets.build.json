@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mpedUVwJ/b5njnNLoXcsLsfRHr0RnuaK8DJ+wkc3kkk=",
+  "Hash": "MEZrnI6PI3BKYOPzHTxLp0W5Yrp3Hkuh61IU/nH6hNY=",
   "Source": "MvcMovie",
   "BasePath": "_content/MvcMovie",
   "Mode": "Default",
@@ -243,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/Account.js"
+    },
+    {
+      "Identity": "/Users/lawrence/Documents/GitHub/realkritik/wwwroot/js/mainpage.js",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/lawrence/Documents/GitHub/realkritik/wwwroot/",
+      "BasePath": "_content/MvcMovie",
+      "RelativePath": "js/mainpage.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/mainpage.js"
     },
     {
       "Identity": "/Users/lawrence/Documents/GitHub/realkritik/wwwroot/js/site.js",
@@ -1345,6 +1364,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Users/lawrence/Documents/GitHub/realkritik/wwwroot/movies-2010s.json",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/lawrence/Documents/GitHub/realkritik/wwwroot/",
+      "BasePath": "_content/MvcMovie",
+      "RelativePath": "movies-2010s.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/movies-2010s.json"
     }
   ]
 }

@@ -23,7 +23,7 @@ $(document).ready(function () {
             url: "/AccountController/Create",
             data: formData,
             success: function (response) {
-
+                console.log("SUCCESSFUL SUBMISSION")
             },
             error: function (error) {
 

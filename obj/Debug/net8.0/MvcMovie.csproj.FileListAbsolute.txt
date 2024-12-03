@@ -285,7 +285,6 @@ g:/GitHub/realkritik/obj/Debug/net8.0/ref/MvcMovie.dll
 g:/GitHub/realkritik/bin/Debug/net8.0/movies-2010s.json
 /Users/lawrence/Documents/GitHub/realkritik/bin/Debug/net8.0/appsettings.Development.json
 /Users/lawrence/Documents/GitHub/realkritik/bin/Debug/net8.0/appsettings.json
-/Users/lawrence/Documents/GitHub/realkritik/bin/Debug/net8.0/movies-2010s.json
 /Users/lawrence/Documents/GitHub/realkritik/bin/Debug/net8.0/MvcMovie.staticwebassets.runtime.json
 /Users/lawrence/Documents/GitHub/realkritik/bin/Debug/net8.0/MvcMovie
 /Users/lawrence/Documents/GitHub/realkritik/bin/Debug/net8.0/MvcMovie.deps.json

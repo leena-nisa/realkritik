@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets/js/Account.js"
     },
     {
+      "Id": "/Users/lawrence/Documents/GitHub/realkritik/wwwroot/js/mainpage.js",
+      "PackagePath": "staticwebassets/js/mainpage.js"
+    },
+    {
       "Id": "/Users/lawrence/Documents/GitHub/realkritik/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
@@ -275,6 +279,10 @@
     {
       "Id": "/Users/lawrence/Documents/GitHub/realkritik/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/lawrence/Documents/GitHub/realkritik/wwwroot/movies-2010s.json",
+      "PackagePath": "staticwebassets/movies-2010s.json"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.MvcMovie.Microsoft.AspNetCore.StaticWebAssets.props",
