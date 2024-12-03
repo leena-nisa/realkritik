@@ -4,13 +4,6 @@ using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
-<<<<<<< HEAD
-    public class AccountController : Controller
-    {
-        private readonly MvcMovieContext _context;
-
-        // Inject the DbContext (assuming you have it configured)
-=======
     /// <summary>
     /// Module Name: AccountController
     /// Date of Code: 11/1/2024
@@ -42,19 +35,15 @@ namespace MvcMovie.Controllers
         /// <summary>
         /// Initializes a new instance of the AccountController class with a specified database context. Inject the DbContext (assuming you have it configured).
         /// </summary>
->>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
         public AccountController(MvcMovieContext context)
         {
             _context = context;
         }
 
-<<<<<<< HEAD
-=======
         /// <summary>
         /// Displays the main account page with a list of all reviews and a form for adding a new review.
         /// </summary>
 
->>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
         public IActionResult Index()
         {
             var viewModel = new ReviewIndex
@@ -65,10 +54,6 @@ namespace MvcMovie.Controllers
             return View(viewModel);
         }
         
-<<<<<<< HEAD
-        // Action to handle form submission and add a new review
-        [HttpPost]
-=======
         /// <summary>
         /// Handles form submissions for creating a new review.
         /// Validates the review input.
@@ -78,7 +63,6 @@ namespace MvcMovie.Controllers
         /// A redirect to the Index action on successful creation or the form view with validation errors.
         /// </returns>
        [HttpPost]
->>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
        public async Task<IActionResult> Create(Review review)
         {
             Console.WriteLine(review);

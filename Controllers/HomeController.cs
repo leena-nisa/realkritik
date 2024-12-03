@@ -36,24 +36,18 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-<<<<<<< HEAD
-=======
 
     /// <summary>
     /// Displays the home page of the application.
     /// </summary>
->>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
     public IActionResult Index()
     {
         return View();
     }
 
-<<<<<<< HEAD
-=======
     /// <summary>
     /// Displays the privacy policy page of the application.
     /// </summary>
->>>>>>> dab56d54c6a63a1b38bfa07c00b50913872e9d48
     public IActionResult Privacy(){
         return View(); 
     }
