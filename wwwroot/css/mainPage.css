@@ -25,7 +25,7 @@ body{
     padding-left: 15px;
 }
 .top-half{
-    background-color: rgba(128,128,128,1);
+    background-color: rgb(203, 127, 127);
     display: block;
     height: 200px;
     
@@ -101,6 +101,7 @@ body{
 
 #top-picks{
     min-height: 100vh;
+    background-color: aqua;
 }
 .top-picks, .horror, .comedy, .romance{
     width: 24%;
