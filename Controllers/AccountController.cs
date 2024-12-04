@@ -4,76 +4,73 @@ using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
-    /// <summary>
-    /// Module Name: AccountController
-    /// Date of Code: 11/1/2024
-    /// Programmer's Name: 
-    /// 
-    /// Description:
-    /// Handles user account functionalities such as displaying reviews and allowing users to add new reviews.
-    /// Controller for managing user accounts and their associated reviews.
-    /// 
-    /// Functions:
-    /// - Index(): Displays a list of user reviews and a form for adding new reviews.
-    /// - Create(Review review): Handles form submissions to add a new review.
-    /// 
-    /// Important Data Structures:
-    /// - Review: Represents a single review submitted by the user.
-    /// - ReviewIndex: ViewModel combining existing reviews and a new review form.
-    /// 
-    /// Algorithms:
-    /// A straightforward approach using Entity Framework to query the database and save new reviews.
-    /// </summary>
-    
     public class AccountController : Controller
     {
-        /// <summary>
-        /// Database context for interacting with the Reviews table.
-        /// </summary>
         private readonly MvcMovieContext _context;
-        
-        /// <summary>
-        /// Initializes a new instance of the AccountController class with a specified database context. Inject the DbContext (assuming you have it configured).
-        /// </summary>
+
         public AccountController(MvcMovieContext context)
         {
             _context = context;
         }
 
-        /// <summary>
-        /// Displays the main account page with a list of all reviews and a form for adding a new review.
-        /// </summary>
-
         public IActionResult Index()
         {
             var viewModel = new ReviewIndex
             {
-                Reviews = _context.Reviews.ToList(),  
-                NewReview = new Review()  
+                Reviews = _context.Reviews?.ToList() ?? new List<Review>(),
+                NewReview = new Review()
             };
+
+            TempData["Success"] = null;
+            TempData["Error"] = null;
+
             return View(viewModel);
         }
-        
-        /// <summary>
-        /// Handles form submissions for creating a new review.
-        /// Validates the review input.
-        /// Adds the review to the database if the input is valid.
-        /// </summary>
-        /// <returns>
-        /// A redirect to the Index action on successful creation or the form view with validation errors.
-        /// </returns>
-       [HttpPost]
-       public async Task<IActionResult> Create(Review review)
+
+        [HttpPost]
+        public IActionResult Login(string Username, string Password)
         {
-            Console.WriteLine(review);
-            if (ModelState.IsValid)
+            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
             {
-                await _context.Reviews.AddAsync(review);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["Error"] = "Invalid login. Please provide both username and password.";
+                return RedirectToAction("Index", "Home");
             }
 
-            return View(review); // Return the view with the review object (pre-populated with user input)
+            var user = _context.Users.FirstOrDefault(u => u.Username == Username && u.Password == Password);
+
+            if (user == null)
+            {
+                TempData["Error"] = "Invalid login. Username or password is incorrect.";
+                return RedirectToAction("Index", "Home");
+            }
+
+            TempData["Success"] = "Login successful.";
+            return RedirectToAction("Index", "Account");
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> SignUp(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var existingUser = _context.Users.FirstOrDefault(u => u.Username == user.Username);
+                if (existingUser != null)
+                {
+                    TempData["Error"] = "Signup failed. Username already exists.";
+                    return RedirectToAction("Index", "Home");
+                }
+
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync(); // Save the new user to the database
+
+                TempData["Success"] = "Signup successful! Please log in.";
+                return RedirectToAction("Index", "Home");
+            }
+
+            TempData["Error"] = "Signup failed. Please check your input.";
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }

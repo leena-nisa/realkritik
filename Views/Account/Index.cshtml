@@ -109,33 +109,30 @@
                     <h2>Reviews</h2>
                 </li>
                 <div class="reviews-container">
-                    @if (Model.Reviews.Any(r => r.status == "Completed"))
-                    {
-                        <ul style="list-style-type: none">
-                            @foreach (var review in Model.Reviews.Where(r => r.status == "Completed"))
-                            {
-
-
-                                <div class="review-box">
-                                    <div class="review-header">
-                                        <h2 class="review-title">@review.Title</h2>
-                                        <div class="review-score">@review.Score</div>
+                    @if (Model.Reviews != null && Model.Reviews.Any(r => r.status == "Completed"))
+                        {
+                            <ul style="list-style-type: none">
+                                @foreach (var review in Model.Reviews.Where(r => r.status == "Completed"))
+                                {
+                                    <div class="review-box">
+                                        <div class="review-header">
+                                            <h2 class="review-title">@review.Title</h2>
+                                            <div class="review-score">@review.Score</div>
+                                        </div>
+                                        <div class="review-description">
+                                            @review.ReviewDescription
+                                        </div>
+                                        <button class="reviewDetailModalButton" onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))')">
+                                            View Details
+                                        </button>
                                     </div>
-                                    <div class="review-description">
-                                        @review.ReviewDescription
-                                    </div>
-
-                                    <button class="reviewDetailModalButton" onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))')">
-                                        View Details
-                                    </button>
-                                </div>
-                            }
-                        </ul>
-                    }
-                    else
-                    {
-                        <p>No completed reviews found.</p>
-                    }
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p>No completed reviews found.</p>
+                        }
                 </div>
 
             </ul>

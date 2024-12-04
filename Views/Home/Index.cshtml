@@ -3,16 +3,76 @@
     Layout = null;
 }
 
+<style>
+    /* Popup styling */
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: none; /* Hidden by default */
+        z-index: 1000;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none; /* Hidden by default */
+        z-index: 999;
+    }
+
+    .popup input[type="text"],
+    .popup input[type="email"],
+    .popup input[type="password"] {
+        width: calc(100% - 20px);
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .popup button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .popup button:hover {
+        background-color: #45a049;
+    }
+
+    .close-btn {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-top: 10px;
+    }
+</style>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration & Authentication</title>
+    <title>User Login & Signup</title>
     <link rel="stylesheet" href="/css/Home.css">
     <link rel="stylesheet" href="/css/LoginPage.css">
-    
 </head>
 <body>
     <div class="container">
@@ -22,31 +82,58 @@
         <div class="right-container">
             <h1>Welcome to Kritik</h1>
             <p id="right-container-caption">Login or Signup to become a Kritik!</p>
-            <form>
+
+            <!-- Display success or error messages -->
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">@TempData["Error"]</div>
+            }
+
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">@TempData["Success"]</div>
+            }
+
+            <!-- Login Form -->
+            <form asp-controller="Account" asp-action="Login" method="post">
                 <label for="username">Username</label>
-                <input type="text" placeholder="Username" id="username" name="username" required>
+                <input type="text" placeholder="Username" id="username" name="Username" required />
 
                 <label for="password">Password</label>
-                <input type="password" placeholder="Password" id="password" name="password" data-= required>
+                <input type="password" placeholder="Password" id="password" name="Password" required />
                 
                 <div class="btn-container">
-                    <button type="button" id="log-in-btn" onclick="validate()">Log In</button>
-                    <button type="button" id="sign-up-btn">Sign Up</button>
+                    <button type="submit" id="log-in-btn">Log In</button>
+                    <button type="button" id="sign-up-btn" onclick="showPopup()">Sign Up</button>
                 </div>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index">Account</a>
             </form>
         </div>
     </div>
-</body>
-</html>
 
-<script>
-    function validate(){
-        console.log(document.getElementById("password").value);
-        if(document.getElementById("password").value == "ryan"){
-            window.location.href = "/Main"
+    <!-- Popup structure -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup" id="popup">
+        <h2>Sign Up</h2>
+        <form asp-controller="Account" asp-action="SignUp" method="post">
+            <input type="text" placeholder="Name" id="name" name="Name" required>
+            <input type="email" placeholder="Email" id="email" name="Email" required>
+            <input type="text" placeholder="Username" id="popup-username" name="Username" required>
+            <input type="password" placeholder="Password" id="popup-password" name="Password" required>
+            <button type="submit">Submit</button>
+            <button type="button" class="close-btn" onclick="closePopup()">Close</button>
+        </form>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("popup-overlay").style.display = "block";
         }
 
-    }
-</script>
-
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("popup-overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
