@@ -1,0 +1,328 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.reviews-list {
+    padding: 10px;
+    margin: 10px;
+    background-color: #00000080;
+    border-radius: 10px;
+    width: 40%;
+    margin-bottom: -120px;
+}
+
+#reviews-list-caption{
+    color: white;
+    padding-left: 20px;
+}
+
+.reviews-list li {
+    margin-bottom: 10px;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    max-height: 600px; 
+    overflow-y: auto; 
+}
+.reviews-container ul{
+    padding-left: 0px;
+}
+
+.review-box {
+    padding: 100px;
+    background-color: rgba(22, 22, 23, 0.5);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.review-box {
+    padding: 20px;
+    background-color: #161617;
+    margin-bottom: 20px;
+}
+.review-box:hover {
+    background-color: #0867d2;
+    /* Adjust the hover color as needed */
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px;
+}
+
+.review-title {
+    font-weight: bold;
+    color: whitesmoke;
+}
+.review-score{
+    color: #ffde59;
+    padding-top: 23px;
+    font-size: 16px;
+}
+.review-description {
+    margin-top: 10px;
+    color: #e3e3e3c5;
+    font-weight: 50;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+#logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#logo {
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-container .link:hover {
+    color: white;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+}
+
+.test {
+    background: #161617;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    color: white;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.modal-overlay.active .test {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close-button {
+    position: absolute;
+    /* Absolute position for top-right placement */
+    top: 10px;
+    /* Distance from the top */
+    right: 10px;
+    /* Distance from the right */
+    background: transparent;
+    /* No background */
+    border: none;
+    color: #ddd;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #fff;
+    /* Change color on hover for better visibility */
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+
+body{
+    overflow-x: hidden;
+    background-color: black;
+    margin: 0px;
+    display: block;
+    }
+    /*this is anything having to do witht the top part of accoutn page*/
+    .top-banner{
+        background-color: rgb(225, 222, 222);
+    }
+    .banner{
+        height: 200px;
+    }
+    .nav-links{
+        background: #121212;
+        position: relative;
+        height: 50px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .nav-container{
+        display: flex;
+        justify-content: center;
+        gap: 130px;
+        margin-left: 70px;
+    }
+    .nav-container a{
+        color: gray;
+        text-decoration: none;
+    }
+    .background-img{
+        background-image: url(/img/ryanTestBackground.jpeg);
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 35%;
+        opacity: 1.5;
+        height: 200px
+    }
+    .background-img img{
+        width: 70px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        background: rgba(204, 198, 198, .5)    
+    }
+    #logo{
+        width: 80px;
+        margin-top: 5px;
+        margin-bottom: 30px;
+        margin-left: 12px;
+        background: rgba(204, 198, 198, .34);
+        border-radius: 50px;
+    }
+    .profile-contain{
+        display: flex;
+        padding-left: 80px;
+        margin-top: -21px;
+    }
+    .profile-name{
+        width: 200px;
+        height: 60px;
+        padding-top: 50px;
+        display: inline-block;
+        color: aliceblue;
+        
+    }
+    .profile-name h1{
+    
+        margin: 0px;
+        width: 100px;
+        
+    }
+    .profile-pic{
+        width: 125px;
+    }
+    .profile-pic img{
+        width: 100px;
+    }
+    /*Anythign having to deal with the body content of account page*/
+    .account-body{
+        background-color: #000000;
+        background-image: url('/img/background.png'); /* Assigns body background */  
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat; 
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /*Having to deal with the footer of account page*/
+    
+    .add-review{
+        background-color: #e50914;
+        color: white;
+        text-decoration: none;;
+        border: none;
+        border-radius: 5px;
+        height: 75%;
+        width: 10%;
+        transition: 0.1s;
+    }
+    
+    .add-review:hover{
+        background-color:  rgb(72, 113, 151);
+        transition: 0.1s;
+        cursor: pointer;
+    }
+    
+    .review-form {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        display: none;
+    }
+    
+    .review-form h2 {
+        margin-top: 0;
+        font-size: 1.5em;
+        color: #333;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(222 0 0);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    
+    .submit-btn:hover {
+        background-color: #218838;
+    }
+    
+    #title, #rating, #notes{
+        width: 95%;
+    }
+    
+    .close-review-form{
+        transition: 0.1s;
+        margin-top: 10px;
+        border: none;
+        background-color: rgb(224, 79, 79);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 100px;
+        border-radius: 5px;
+    }
+    
+    .close-review-form:hover{
+        transition: 0.1s;
+        background-color: rgb(196, 22, 22);
+        cursor: pointer;
+    }
+    
+ /* ------------------------------------------------------- */
+ 

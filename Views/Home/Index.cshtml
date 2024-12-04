@@ -1,7 +1,52 @@
 ﻿@{
     ViewData["Title"] = "Movie List";
+    Layout = null;
 }
 
-<h2>My Movie List</h2>
 
-<p>Hello from our View Template!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration & Authentication</title>
+    <link rel="stylesheet" href="/css/Home.css">
+    <link rel="stylesheet" href="/css/LoginPage.css">
+    
+</head>
+<body>
+    <div class="header">
+        <h1>KRITIK</h1>
+    </div>
+    <div class="container">
+        <div class="right-container">
+            <h1>Welcome to Kritik</h1>
+            <p id="right-container-caption">A Movie Review Site</p>
+            <form>
+                <label for="username">Username</label>
+                <input type="text" placeholder="Username" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="password" name="password" data-= required>
+                
+                <div class="btn-container">
+                    <button type="button" id="log-in-btn" onclick="validate()">Log In</button>
+                    <button type="button" id="sign-up-btn">Sign Up</button>
+                </div>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index">Account</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function validate(){
+        console.log(document.getElementById("password").value);
+        if(document.getElementById("password").value == "ryan"){
+            window.location.href = "/Main"
+        }
+
+    }
+</script>
+

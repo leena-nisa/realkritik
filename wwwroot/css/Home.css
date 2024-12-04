@@ -1,0 +1,122 @@
+
+body {
+    background-image: url('/img/background.png'); /* Assigns body background */  
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden; /* Disables scrolling */ 
+}
+
+.header{
+    color: #E50914;
+    display: flex;
+    justify-content: flex-start; /* Assigns content to the left (start) */ 
+    align-content: center; /* Alligns content in the middle (vertically) */
+    height: 10%; 
+    width: 100vw;
+    padding-left: 200px; 
+    font-size: 32px;
+    margin-bottom: 150px;
+}
+
+.container {
+    border-radius: 20px;
+    width: 30rem;
+    height: 50%;
+    display: flex;
+    margin-bottom: 100px; 
+    gap: 20px; 
+    color:white; 
+    background-color: rgba(0, 0, 0, 0.5); /* 0.5 assigns 50% opacity */
+}
+
+.left-container, .right-container{
+    flex: 1;
+    border-radius: 20px;
+    background-color: #161617;
+}
+
+.left-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -4px 4px 15px rgba(250, 57, 89, 0.993);
+}
+
+.right-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; /* Spaces out elements */
+    padding: 20px;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#right-container-caption{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -40px;
+}
+
+.btn-container{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#sign-up-btn, #log-in-btn{
+    display: flex; justify-content: center; align-items: center;
+    background-color: transparent;
+    height: 40px;
+    width: 170px;
+    font-size: 16px;
+    transition: 0.1s; /* transition IN */
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+#log-in-btn{
+    background-color: #E50914;
+    border: none;
+}
+
+#sign-up-btn:hover, #log-in-btn:hover{
+    background-color: rgb(48, 88, 158);
+    color: white;
+    cursor:pointer;
+    transition: 0.1s; /* transition OUT */
+}
+
+#username, #password{
+    color: white;
+    width: 95%;
+    height: 42px;
+    display: flex; justify-content: left; align-items: center;
+    padding-left: 10px;
+    border: none;
+    border-radius: 2px;
+    background-color: #5d5d5d80; /* The last two digits '80' represent 50% opacity */
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 8px;
+}
+
+#login-logo{
+    height: 100%;
+    width: 100%;
+}

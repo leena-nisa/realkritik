@@ -1,0 +1,184 @@
+@model MvcMovie.Models.ReviewIndex
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<head>
+    <link rel="stylesheet" href="/css/Account.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Andale+Mono&display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="/js/Account.js"></script>
+    <!-- referencing Ajax and Google fonts  -->
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="top-banner">
+            <!--within here we will have the Banner in the background, the profile picture and link/logo to homepage-->
+            <div class="banner">
+                <div class="background-img">
+                    <a asp-area="" asp-controller="Main" asp-action="Index" title="logo">
+                        <img id="logo" src="/img/IMG_0213.png" alt="logo">
+                        <!-- This is where the logo banner lies -->
+                    </a>
+                    <div class="profile-contain">
+                        <div class="profile-pic">
+                            <img src="/img/ryanTestProfile.jpeg" alt="profile-pic">
+                            <!-- Profile Picture -->
+                        </div>
+                        <div class="profile-name">
+                            <h1 class="name">Ryan</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-links">
+
+                <!-- This is where the openModal() function is called when the button is clicked -->
+                <button onclick="openModal()" class="add-review">Add Review +</button>
+                <div class="nav-container">
+                    <a href="" class="link" id="overview">Overview</a>
+                    <a href="" class="link" id="overview">Your Reviews</a>
+                    <a href="" class="link" id="overview">Favorites</a>
+                    <a href="" class="link" id="overview">Watched</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="account-body">
+
+            <div class="modal-overlay" id="modalOverlay" style="display:none">
+                <div class="test">
+
+                    <!-- This is where the closeModal() is called when the X button is clicked -->
+                    <button class="close-button" onclick="closeModal()">✖</button>
+                    <h1>Leave a Movie Review</h1>
+                    <form asp-action="Create" method="post" id="myForm">
+                        <div class="form-group">
+                            <label for="title">Movie Title:</label>
+                            <input type="text" id="title" name="title" placeholder="Enter movie title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status">Status:</label>
+                            <select class="form-control" name="status" id="status" required>
+                                <option value="Completed">Completed</option>
+                                <option value="Watching">Watching</option>
+                                <option value="Plan to watch">Plan to watch</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="rating">Rating (1 to 10):</label>
+                            <input type="number" name="Score" id="Score" min="1" max="10"
+                                placeholder="Enter your rating" type="number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Notes/Description:</label>
+                            <textarea name="ReviewDescription" id="ReviewDescription" rows="4"
+                                placeholder="Write your review here..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit Review</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+            <div class="account-wrap">
+                <div class="left-section"></div>
+                <div class="right-section"></div>
+            </div>
+
+            <ul class="reviews-list">
+                <li>
+                    <h2 id="reviews-list-caption">Reviews</h2>
+                </li>
+                <div class="reviews-container">
+                    @if (Model.Reviews.Any(r => r.status == "Completed"))
+                    {
+                        <ul style="list-style-type: none">
+                            @foreach (var review in Model.Reviews.Where(r => r.status == "Completed"))
+                            {
+
+
+                                <div class="review-box">
+                                    <div class="review-header">
+                                        <h2 class="review-title">@review.Title</h2>
+                                        <div class="review-score">@review.Score</div>
+                                    </div>
+                                    <div class="review-description">
+                                        @review.ReviewDescription
+                                    </div>
+
+                                    <button class="reviewDetailModalButton" onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))')">
+                                        View Details
+                                    </button>
+                                </div>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No completed reviews found.</p>
+                    }
+                </div>
+
+            </ul>
+        </div>
+
+        <div id="reviewDetailModal" style="display: none; color:aliceblue; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #121212; padding: 20px; border: 1px solid #ccc; z-index: 1000; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            <button onclick="closeReviewDetail()" style="float: right;">X</button>
+            <img id="reviewDetailImage" src="" alt="Review Image" style="width: 100px; height: auto; object-fit: cover; border-radius: 8px;">
+            <div>
+                <div id="reviewDetailTitle" style="font-size: 18px; font-weight: bold;"></div>
+                <div id="reviewDetailScore" style="margin-top: 10px;"></div>
+                <div id="reviewDetailDescription" style="margin-top: 10px;"></div>
+            </div>
+        </div>
+
+  
+        <div id="modalBackdrop" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
+
+        <div class="footer">
+
+        </div>
+    </div>
+</body>
+
+<script>
+    function openReviewDetail(title, score, description) {
+        document.getElementById('reviewDetailTitle').textContent = title;
+        document.getElementById('reviewDetailScore').textContent = `Score: ${score}`;
+        document.getElementById('reviewDetailDescription').textContent = description;
+
+        document.getElementById('reviewDetailModal').style.display = 'block';
+        document.getElementById('modalBackdrop').style.display = 'block';
+
+        const imgElement = document.getElementById('reviewDetailImage');
+        imgElement.src = "/img/fight.jpeg";
+    }
+
+    function closeReviewDetail() {
+        document.getElementById('reviewDetailModal').style.display = 'none';
+        document.getElementById('modalBackdrop').style.display = 'none';
+    }
+    document.getElementById('modalBackdrop').addEventListener('click', closeReviewDetail);
+</script>
+
+
+

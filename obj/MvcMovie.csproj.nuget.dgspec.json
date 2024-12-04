@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/leena/Desktop/pleasework/MvcMovie/MvcMovie.csproj": {}
+    "/Users/lawrence/Documents/GitHub/realkritik/MvcMovie.csproj": {}
   },
   "projects": {
-    "/Users/leena/Desktop/pleasework/MvcMovie/MvcMovie.csproj": {
+    "/Users/lawrence/Documents/GitHub/realkritik/MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/leena/Desktop/pleasework/MvcMovie/MvcMovie.csproj",
+        "projectUniqueName": "/Users/lawrence/Documents/GitHub/realkritik/MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "/Users/leena/Desktop/pleasework/MvcMovie/MvcMovie.csproj",
-        "packagesPath": "/Users/leena/.nuget/packages/",
-        "outputPath": "/Users/leena/Desktop/pleasework/MvcMovie/obj/",
+        "projectPath": "/Users/lawrence/Documents/GitHub/realkritik/MvcMovie.csproj",
+        "packagesPath": "/Users/lawrence/.nuget/packages/",
+        "outputPath": "/Users/lawrence/Documents/GitHub/realkritik/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/leena/.nuget/NuGet/NuGet.Config"
+          "/Users/lawrence/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -82,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
