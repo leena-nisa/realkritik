@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\GitHub\\realkritik\\MvcMovie.csproj": {}
+    "g:\\GitHub\\realkritik\\MvcMovie.csproj": {}
   },
   "projects": {
-    "G:\\GitHub\\realkritik\\MvcMovie.csproj": {
+    "g:\\GitHub\\realkritik\\MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\GitHub\\realkritik\\MvcMovie.csproj",
+        "projectUniqueName": "g:\\GitHub\\realkritik\\MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "G:\\GitHub\\realkritik\\MvcMovie.csproj",
+        "projectPath": "g:\\GitHub\\realkritik\\MvcMovie.csproj",
         "packagesPath": "C:\\Users\\lotec\\.nuget\\packages\\",
-        "outputPath": "G:\\GitHub\\realkritik\\obj\\",
+        "outputPath": "g:\\GitHub\\realkritik\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lotec\\AppData\\Roaming\\NuGet\\NuGet.Config",

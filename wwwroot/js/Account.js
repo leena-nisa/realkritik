@@ -15,15 +15,13 @@ function closeModal() {
 }
 
 $(document).ready(function () {
-    $("#submitButton").click(function () {
-        var formData = $("#myForm").serialize();
-
+    $("#myForm").submit(function (e) {
+        var formData = $(this).serialize();
         $.ajax({
             type: "POST",
-            url: "/AccountController/Create",
+            url: "/Review/Create",
             data: formData,
-            success: function (response) {
-
+            success: function () {
             },
             error: function (error) {
 

@@ -1,8 +1,10 @@
 @model IEnumerable<MvcMovie.Models.Review>
+@using System.Security.Claims
 
 @{
     ViewData["Title"] = "Index";
     Layout = null;
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
 @section Scripts {
@@ -60,11 +62,9 @@
 
             <div class="modal-overlay" id="modalOverlay" style="display:none">
                 <div class="test">
-
-                    <!-- This is where the closeModal() is called when the X button is clicked -->
                     <button class="close-button" onclick="closeModal()">✖</button>
                     <h1>Leave a Movie Review</h1>
-                    <form asp-action="Create" method="post" id="myForm">
+                    <form id="myForm" method="post">
                         <div class="form-group">
                             <label for="title">Movie Title:</label>
                             <input type="text" id="title" name="title" placeholder="Enter movie title" required>
@@ -79,22 +79,23 @@
                             </select>
                         </div>
 
-
                         <div class="form-group">
-                            <label for="rating">Rating (1 to 10):</label>
+                            <label for="Score">Rating (1 to 10):</label>
                             <input type="number" name="Score" id="Score" min="1" max="10"
-                                placeholder="Enter your rating" type="number" required>
+                                placeholder="Enter your rating" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="notes">Notes/Description:</label>
+                            <label for="ReviewDescription">Notes/Description:</label>
                             <textarea name="ReviewDescription" id="ReviewDescription" rows="4"
-                                placeholder="Write your review here..."></textarea>
+                                placeholder="Write your review here..." required></textarea>
                         </div>
+
+                        <!-- Hidden input for UserId -->
+                        <input type="hidden" name="userId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
 
                         <button type="submit" class="submit-btn">Submit Review</button>
                     </form>
-
                 </div>
             </div>
 

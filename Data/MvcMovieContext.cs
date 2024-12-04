@@ -15,7 +15,6 @@ namespace MvcMovie.Data
         }
 
         public DbSet<Review> Reviews { get; set; }
-        public DbSet<ReviewIndex> ReviewIndex { get; set; }
         public DbSet<User> Users { get; set; }
 
     }

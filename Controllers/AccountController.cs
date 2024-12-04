@@ -16,10 +16,6 @@ namespace MvcMovie.Controllers
         public IActionResult Index()
         {
             var reviews = _context.Reviews?.ToList() ?? new List<Review>();
-
-            TempData["Success"] = null;
-            TempData["Error"] = null;
-
             return View(reviews);
         }
 
