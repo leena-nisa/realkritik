@@ -325,9 +325,7 @@ body{
     align-items:center;
     display: grid;
     grid-template-rows: repeat(3.1fr);
-    background-image: url('/img/background.png');
-    background-size: cover; 
-    background-position: center;
+    background-color: #121212;
     justify-content: center;
     align-items: center;
 }

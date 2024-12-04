@@ -70,7 +70,7 @@
                                 @foreach (var review in Model.Where(r => r.status == "Watching" && r.UserId == userId))
                                 {
                                     <li>
-                                        <div class="review-box">
+                                        <div class="review-box" onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
                                             <div class="review-header">
                                                 <h2 class="review-title">@review.Title</h2>
                                                 <div class="review-score">@review.Score</div>
@@ -78,10 +78,6 @@
                                             <div class="review-description">
                                                 @review.ReviewDescription
                                             </div>
-                                            <button class="reviewDetailModalButton"
-                                                onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
-                                                View Details
-                                            </button>
                                         </div>
                                     </li>
                                 }
@@ -100,7 +96,7 @@
                                 @foreach (var review in Model.Where(r => r.status == "Completed" && r.UserId == userId))
                                 {
                                     <li>
-                                        <div class="review-box">
+                                        <div class="review-box" onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
                                             <div class="review-header">
                                                 <h2 class="review-title">@review.Title</h2>
                                                 <div class="review-score">@review.Score</div>
@@ -108,10 +104,6 @@
                                             <div class="review-description">
                                                 @review.ReviewDescription
                                             </div>
-                                            <button class="reviewDetailModalButton"
-                                                onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
-                                                View Details
-                                            </button>
                                         </div>
                                     </li>
                                 }
@@ -133,7 +125,7 @@
                                 @foreach (var review in Model.Where(r => r.status == "Plan to watch" && r.UserId == userId))
                                 {
                                     <li>
-                                        <div class="review-box">
+                                        <div class="review-box" onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
                                             <div class="review-header">
                                                 <h2 class="review-title">@review.Title</h2>
                                                 <div class="review-score">@review.Score</div>
@@ -141,10 +133,6 @@
                                             <div class="review-description">
                                                 @review.ReviewDescription
                                             </div>
-                                            <button class="reviewDetailModalButton"
-                                                onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
-                                                View Details
-                                            </button>
                                         </div>
                                     </li>
                                 }

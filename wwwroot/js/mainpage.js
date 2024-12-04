@@ -13,9 +13,7 @@ http.onload = function(){
         //parse the json file 
         movies = JSON.parse(this.responseText);
         var outputTopPick = "";
-        var outputHorror = "";
-        var outputComedy = ""; 
-        var outputRomance = "";  
+        var outputHorror = ""; 
         let x = 0; 
         
         //loop for posting Top Movies
@@ -77,88 +75,9 @@ http.onload = function(){
         }
         
         
-        //loop for posting Comedy movies
-        for(let item of movies){ //for every item of movies we loop through
-            if('genres' in item){ //does it contain a genres
-                if('thumbnail' in item){
-                    for(var i = 0; i < item.genres.length; i++){ //if it does, loop through the array of genres
-                    
-                        if(item.genres[i] == 'Comedy'){ //if one of the entries is horror then we will go ahead and do output 
-                            
-    
-                            outputComedy += `
-                                <div class="comedy">
-                                    <img class = "moviePoster" src=${ item.thumbnail } alt="some-movie">
-                                        <div class="comedy-name">
-                                            <p>${ item.title }</p>
-                                        </div>
-                                </div>
-                            `;
-                            
-                        }
-                    }
-                } else {
-                    console.log('this is x: ' + x);
-                document.getElementById('comedy').innerHTML = outputHorror; 
-                x++; 
-                if(x == 24){
-                    x = 0; 
-                    break; 
-                }
-                    continue; 
-                }
-                
-                
-                
-                
-            }
-        }
-        
-       
-        //loop for posting Romance movies
-        for(let item of movies){ //for every item of movies we loop through
-            if('genres' in item){ //does it contain a genres
-                if('thumbnail' in item){
-                    for(var i = 0; i < item.genres.length; i++){ //if it does, loop through the array of genres
-                    
-                        if(item.genres[i] == 'Romance'){ //if one of the entries is horror then we will go ahead and do output 
-                            
-    
-                            outputRomance += `
-                                <div class="romance">
-                                    <img class = "moviePoster" src=${ item.thumbnail } alt="some-movie">
-                                        <div class="romance-name">
-                                            <p>${ item.title }</p>
-                                        </div>
-                                </div>
-                            `;
-                            
-                        }
-                    }
-                } else {
-                    console.log('this is x: ' + x);
-                document.getElementById('romance').innerHTML = outputHorror; 
-                x++; 
-                if(x == 24){
-                    x = 0; 
-                    break; 
-                }
-                    continue; 
-                }
-                
-                
-                
-                
-            }
-        }
-        
         
     }
 }
 
 
-
-function openMovieModal(x){
-   
-}
 
