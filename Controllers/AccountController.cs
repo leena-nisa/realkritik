@@ -14,7 +14,10 @@ namespace MvcMovie.Controllers
         }
 
         public IActionResult Index()
-        {
+        {   
+            var userId = HttpContext.Session.GetInt32("UserId");
+            ViewData["UserId"] = userId;
+            
             var reviews = _context.Reviews?.ToList() ?? new List<Review>();
             return View(reviews);
         }
@@ -35,6 +38,8 @@ namespace MvcMovie.Controllers
                 TempData["Error"] = "Invalid login. Username or password is incorrect.";
                 return RedirectToAction("Index", "Home");
             }
+
+            HttpContext.Session.SetInt32("UserId", user.Id);
 
             TempData["Success"] = "Login successful.";
             return RedirectToAction("Index", "Account");

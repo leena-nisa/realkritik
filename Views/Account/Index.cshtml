@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = null;
-    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var userId = ViewData["UserId"] as int?;;
 }
 
 @section Scripts {
@@ -92,7 +92,7 @@
                         </div>
 
                         <!-- Hidden input for UserId -->
-                        <input type="hidden" name="userId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+                        <input type="hidden" name="userId" value="@userId" />
 
                         <button type="submit" class="submit-btn">Submit Review</button>
                     </form>
@@ -110,30 +110,31 @@
                     <h2>Reviews</h2>
                 </li>
                 <div class="reviews-container">
-                    @if (Model != null && Model.Any(r => r.status == "Completed"))
-                        {
-                            <ul style="list-style-type: none">
-                                @foreach (var review in Model.Where(r => r.status == "Completed"))
-                                {
-                                    <div class="review-box">
-                                        <div class="review-header">
-                                            <h2 class="review-title">@review.Title</h2>
-                                            <div class="review-score">@review.Score</div>
-                                        </div>
-                                        <div class="review-description">
-                                            @review.ReviewDescription
-                                        </div>
-                                        <button class="reviewDetailModalButton" onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))')">
-                                            View Details
-                                        </button>
+                    @if (Model != null)
+                    {
+                        <ul style="list-style-type: none">
+                            @foreach (var review in Model.Where(r => r.status == "Completed" && r.UserId == userId))
+                            {
+                                <div class="review-box">
+                                    <div class="review-header">
+                                        <h2 class="review-title">@review.Title</h2>
+                                        <div class="review-score">@review.Score</div>
                                     </div>
-                                }
-                            </ul>
-                        }
-                        else
-                        {
-                            <p>No completed reviews found.</p>
-                        }
+                                    <div class="review-description">
+                                        @review.ReviewDescription
+                                    </div>
+                                    <button class="reviewDetailModalButton"
+                                        onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))')">
+                                        View Details
+                                    </button>
+                                </div>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No completed reviews found.</p>
+                    }
                 </div>
 
             </ul>
