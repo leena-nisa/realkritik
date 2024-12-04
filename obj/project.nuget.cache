@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8bKjUtyo3iQ=",
+  "dgSpecHash": "kcw0X62FMps=",
   "success": true,
-  "projectFilePath": "g:\\GitHub\\realkritik\\MvcMovie.csproj",
+  "projectFilePath": "G:\\GitHub\\realkritik\\MvcMovie.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lotec\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\lotec\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

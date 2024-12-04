@@ -59,6 +59,103 @@
 
         </div>
 
+         <div class="accountViewWrap">
+            <div id="accountViewWrap">
+            
+                @if(watchingReviews != null && watchingReviews.Any()){
+                    <div class="reviews-list">
+                        <h2>Watching</h2>
+                        <div class="reviews-container">
+                            <ul style="list-style-type: none">
+                                @foreach (var review in Model.Where(r => r.status == "Watching" && r.UserId == userId))
+                                {
+                                    <li>
+                                        <div class="review-box">
+                                            <div class="review-header">
+                                                <h2 class="review-title">@review.Title</h2>
+                                                <div class="review-score">@review.Score</div>
+                                            </div>
+                                            <div class="review-description">
+                                                @review.ReviewDescription
+                                            </div>
+                                            <button class="reviewDetailModalButton"
+                                                onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
+                                                View Details
+                                            </button>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                }
+
+                <div class="reviews-list">
+                    <h2>Reviews</h2>
+                    <div class="reviews-container">
+                        @if (Model != null)
+                        {
+                            <ul style="list-style-type: none">
+                                @foreach (var review in Model.Where(r => r.status == "Completed" && r.UserId == userId))
+                                {
+                                    <li>
+                                        <div class="review-box">
+                                            <div class="review-header">
+                                                <h2 class="review-title">@review.Title</h2>
+                                                <div class="review-score">@review.Score</div>
+                                            </div>
+                                            <div class="review-description">
+                                                @review.ReviewDescription
+                                            </div>
+                                            <button class="reviewDetailModalButton"
+                                                onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
+                                                View Details
+                                            </button>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p>No completed reviews found.</p>
+                        }
+                    </div>
+
+                </div>
+
+                @if(planToWatch != null && planToWatch.Any()){
+                    <div class="reviews-list">
+                        <h2>Plan to watch</h2>
+                        <div class="reviews-container">
+                            <ul style="list-style-type: none">
+                                @foreach (var review in Model.Where(r => r.status == "Plan to watch" && r.UserId == userId))
+                                {
+                                    <li>
+                                        <div class="review-box">
+                                            <div class="review-header">
+                                                <h2 class="review-title">@review.Title</h2>
+                                                <div class="review-score">@review.Score</div>
+                                            </div>
+                                            <div class="review-description">
+                                                @review.ReviewDescription
+                                            </div>
+                                            <button class="reviewDetailModalButton"
+                                                onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
+                                                View Details
+                                            </button>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+
 
         <div class="account-body">
 
@@ -101,116 +198,19 @@
                 </div>
             </div>
 
-
-            <div class="account-wrap">
-                <div class="left-section"></div>
-                <div class="right-section"></div>
-            </div>
-
-            @if(watchingReviews != null && watchingReviews.Any()){
-                <div class="reviews-list">
-                    <h2>Watching</h2>
-                    <div class="reviews-container">
-                        <ul style="list-style-type: none">
-                            @foreach (var review in Model.Where(r => r.status == "Watching" && r.UserId == userId))
-                            {
-                                <li>
-                                    <div class="review-box">
-                                        <div class="review-header">
-                                            <h2 class="review-title">@review.Title</h2>
-                                            <div class="review-score">@review.Score</div>
-                                        </div>
-                                        <div class="review-description">
-                                            @review.ReviewDescription
-                                        </div>
-                                        <button class="reviewDetailModalButton"
-                                            onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
-                                            View Details
-                                        </button>
-                                    </div>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-
-            }
-
-            <div class="reviews-list">
-                <h2>Reviews</h2>
-                <div class="reviews-container">
-                    @if (Model != null)
-                    {
-                        <ul style="list-style-type: none">
-                            @foreach (var review in Model.Where(r => r.status == "Completed" && r.UserId == userId))
-                            {
-                                <li>
-                                    <div class="review-box">
-                                        <div class="review-header">
-                                            <h2 class="review-title">@review.Title</h2>
-                                            <div class="review-score">@review.Score</div>
-                                        </div>
-                                        <div class="review-description">
-                                            @review.ReviewDescription
-                                        </div>
-                                        <button class="reviewDetailModalButton"
-                                            onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
-                                            View Details
-                                        </button>
-                                    </div>
-                                </li>
-                            }
-                        </ul>
-                    }
-                    else
-                    {
-                        <p>No completed reviews found.</p>
-                    }
-                </div>
-
-            </div>
-
-            @if(planToWatch != null && planToWatch.Any()){
-                <div class="reviews-list">
-                    <h2>Plan to watch</h2>
-                    <div class="reviews-container">
-                        <ul style="list-style-type: none">
-                            @foreach (var review in Model.Where(r => r.status == "Plan to watch" && r.UserId == userId))
-                            {
-                                <li>
-                                    <div class="review-box">
-                                        <div class="review-header">
-                                            <h2 class="review-title">@review.Title</h2>
-                                            <div class="review-score">@review.Score</div>
-                                        </div>
-                                        <div class="review-description">
-                                            @review.ReviewDescription
-                                        </div>
-                                        <button class="reviewDetailModalButton"
-                                            onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
-                                            View Details
-                                        </button>
-                                    </div>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-
-            }
-
+           
 
         </div>
 
-        <div id="reviewDetailModal" style="display: none; color:aliceblue; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #121212; padding: 20px; border: 1px solid #ccc; z-index: 1000; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-            <button onclick="closeReviewDetail()" style="float: right;">X</button>
+        <div id="reviewDetailModal">
             <img id="reviewDetailImage" src="" alt="Review Image" style="width: 100px; height: auto; object-fit: cover; border-radius: 8px;">
-            <div>
-                <div id="reviewDetailTitle" style="font-size: 18px; font-weight: bold;"></div>
+            <div class="reviewBlock">      
+                <div id="reviewDetailTitle" style="font-size: 18px; font-weight: bold;"></div> 
                 <div id="reviewDetailScore" style="margin-top: 10px;"></div>
-                <div id="reviewDetailDescription" style="margin-top: 10px;"></div>
                 <button id="deleteReviewButton" onclick="deleteReview()" style="margin-top: 15px; background-color: red; color: white; border: none; padding: 10px; border-radius: 5px;">Delete</button>
             </div>
+            <div id="reviewDetailDescription" style="margin-top: 10px;"></div>
+            <button onclick="closeReviewDetail()" style="float: right;">X</button>
         </div>
 
   
