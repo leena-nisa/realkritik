@@ -32,6 +32,19 @@ namespace MvcMovie.Controllers
             return View("Index", "Account");
         }
 
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            var review = _context.Reviews.FirstOrDefault(r => r.Id == id);
+            if (review != null)
+            {
+                _context.Reviews.Remove(review);
+                _context.SaveChanges();
+            }
+
+            return Ok();
+        }
+
 
     }
 

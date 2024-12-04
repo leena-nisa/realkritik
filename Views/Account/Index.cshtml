@@ -4,7 +4,8 @@
 @{
     ViewData["Title"] = "Index";
     Layout = null;
-    var userId = ViewData["UserId"] as int?;;
+    var userId = ViewData["UserId"] as int?;
+    var username = ViewData["Username"] as string;
 }
 
 @section Scripts {
@@ -37,7 +38,7 @@
                             <!-- Profile Picture -->
                         </div>
                         <div class="profile-name">
-                            <h1 class="name">Ryan</h1>
+                            <h1 class="name">@username</h1>
                         </div>
                     </div>
                 </div>
@@ -115,19 +116,21 @@
                         <ul style="list-style-type: none">
                             @foreach (var review in Model.Where(r => r.status == "Completed" && r.UserId == userId))
                             {
-                                <div class="review-box">
-                                    <div class="review-header">
-                                        <h2 class="review-title">@review.Title</h2>
-                                        <div class="review-score">@review.Score</div>
+                                <li>
+                                    <div class="review-box">
+                                        <div class="review-header">
+                                            <h2 class="review-title">@review.Title</h2>
+                                            <div class="review-score">@review.Score</div>
+                                        </div>
+                                        <div class="review-description">
+                                            @review.ReviewDescription
+                                        </div>
+                                        <button class="reviewDetailModalButton"
+                                            onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
+                                            View Details
+                                        </button>
                                     </div>
-                                    <div class="review-description">
-                                        @review.ReviewDescription
-                                    </div>
-                                    <button class="reviewDetailModalButton"
-                                        onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))')">
-                                        View Details
-                                    </button>
-                                </div>
+                                </li>
                             }
                         </ul>
                     }
@@ -147,6 +150,7 @@
                 <div id="reviewDetailTitle" style="font-size: 18px; font-weight: bold;"></div>
                 <div id="reviewDetailScore" style="margin-top: 10px;"></div>
                 <div id="reviewDetailDescription" style="margin-top: 10px;"></div>
+                <button id="deleteReviewButton" onclick="deleteReview()" style="margin-top: 15px; background-color: red; color: white; border: none; padding: 10px; border-radius: 5px;">Delete</button>
             </div>
         </div>
 
@@ -160,24 +164,44 @@
 </body>
 
 <script>
-    function openReviewDetail(title, score, description) {
+    let currentReviewId;
+
+    function openReviewDetail(title, score, description,reviewId) {
+        console.log(reviewId)
+        currentReviewId = reviewId;
         document.getElementById('reviewDetailTitle').textContent = title;
         document.getElementById('reviewDetailScore').textContent = `Score: ${score}`;
         document.getElementById('reviewDetailDescription').textContent = description;
 
         document.getElementById('reviewDetailModal').style.display = 'block';
         document.getElementById('modalBackdrop').style.display = 'block';
-
         const imgElement = document.getElementById('reviewDetailImage');
         imgElement.src = "/img/fight.jpeg";
+        console.log(currentReviewId);
     }
 
     function closeReviewDetail() {
         document.getElementById('reviewDetailModal').style.display = 'none';
         document.getElementById('modalBackdrop').style.display = 'none';
     }
+
+    function deleteReview() {
+        if (confirm("Are you sure you want to delete this review?")) {
+            fetch(`/Review/Delete/${currentReviewId}`, {
+                method: "DELETE"
+            })
+                .then(response => {
+                    if (response.ok) {
+                        
+                        closeReviewDetail();
+                        window.location.reload();
+                    } else {
+                        alert("Failed to delete review.");
+                    }
+                })
+                
+        }
+    }
+
     document.getElementById('modalBackdrop').addEventListener('click', closeReviewDetail);
 </script>
-
-
-

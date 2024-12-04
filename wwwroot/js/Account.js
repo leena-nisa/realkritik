@@ -22,6 +22,7 @@ $(document).ready(function () {
             url: "/Review/Create",
             data: formData,
             success: function () {
+                window.location.reload();
             },
             error: function (error) {
 

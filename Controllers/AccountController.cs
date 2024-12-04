@@ -16,8 +16,10 @@ namespace MvcMovie.Controllers
         public IActionResult Index()
         {   
             var userId = HttpContext.Session.GetInt32("UserId");
+            var username = HttpContext.Session.GetString("Username");
             ViewData["UserId"] = userId;
-            
+            ViewData["Username"] = username;
+
             var reviews = _context.Reviews?.ToList() ?? new List<Review>();
             return View(reviews);
         }
@@ -40,6 +42,7 @@ namespace MvcMovie.Controllers
             }
 
             HttpContext.Session.SetInt32("UserId", user.Id);
+            HttpContext.Session.SetString("Username", user.Username);
 
             TempData["Success"] = "Login successful.";
             return RedirectToAction("Index", "Account");
