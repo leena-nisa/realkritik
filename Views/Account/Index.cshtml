@@ -6,6 +6,8 @@
     Layout = null;
     var userId = ViewData["UserId"] as int?;
     var username = ViewData["Username"] as string;
+    var watchingReviews = Model?.Where(r => r.status == "Watching" && r.UserId == userId).ToList();
+    var planToWatch = Model?.Where(r => r.status == "Plan to watch" && r.UserId == userId).ToList();
 }
 
 @section Scripts {
@@ -19,7 +21,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Andale+Mono&display=swap">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="/js/Account.js"></script>
-    <!-- referencing Ajax and Google fonts  -->
 </head>
 
 <body>
@@ -106,10 +107,37 @@
                 <div class="right-section"></div>
             </div>
 
-            <ul class="reviews-list">
-                <li>
-                    <h2>Reviews</h2>
-                </li>
+            @if(watchingReviews != null && watchingReviews.Any()){
+                <div class="reviews-list">
+                    <h2>Watching</h2>
+                    <div class="reviews-container">
+                        <ul style="list-style-type: none">
+                            @foreach (var review in Model.Where(r => r.status == "Watching" && r.UserId == userId))
+                            {
+                                <li>
+                                    <div class="review-box">
+                                        <div class="review-header">
+                                            <h2 class="review-title">@review.Title</h2>
+                                            <div class="review-score">@review.Score</div>
+                                        </div>
+                                        <div class="review-description">
+                                            @review.ReviewDescription
+                                        </div>
+                                        <button class="reviewDetailModalButton"
+                                            onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+            }
+
+            <div class="reviews-list">
+                <h2>Reviews</h2>
                 <div class="reviews-container">
                     @if (Model != null)
                     {
@@ -140,7 +168,38 @@
                     }
                 </div>
 
-            </ul>
+            </div>
+
+            @if(planToWatch != null && planToWatch.Any()){
+                <div class="reviews-list">
+                    <h2>Plan to watch</h2>
+                    <div class="reviews-container">
+                        <ul style="list-style-type: none">
+                            @foreach (var review in Model.Where(r => r.status == "Plan to watch" && r.UserId == userId))
+                            {
+                                <li>
+                                    <div class="review-box">
+                                        <div class="review-header">
+                                            <h2 class="review-title">@review.Title</h2>
+                                            <div class="review-score">@review.Score</div>
+                                        </div>
+                                        <div class="review-description">
+                                            @review.ReviewDescription
+                                        </div>
+                                        <button class="reviewDetailModalButton"
+                                            onclick="openReviewDetail('@review.Title', @review.Score, '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(@review.ReviewDescription))', @review.Id)">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+            }
+
+
         </div>
 
         <div id="reviewDetailModal" style="display: none; color:aliceblue; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #121212; padding: 20px; border: 1px solid #ccc; z-index: 1000; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
