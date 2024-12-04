@@ -14,5 +14,6 @@ public class Review
     public string? status { get; set; } 
     public byte[]? ImageData { get; set; }
     public string? Title { get; set; }
+    public int UserId {get; set;}
   
 }

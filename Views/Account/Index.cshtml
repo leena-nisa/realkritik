@@ -1,4 +1,4 @@
-@model MvcMovie.Models.ReviewIndex
+@model IEnumerable<MvcMovie.Models.Review>
 
 @{
     ViewData["Title"] = "Index";
@@ -109,10 +109,10 @@
                     <h2>Reviews</h2>
                 </li>
                 <div class="reviews-container">
-                    @if (Model.Reviews != null && Model.Reviews.Any(r => r.status == "Completed"))
+                    @if (Model != null && Model.Any(r => r.status == "Completed"))
                         {
                             <ul style="list-style-type: none">
-                                @foreach (var review in Model.Reviews.Where(r => r.status == "Completed"))
+                                @foreach (var review in Model.Where(r => r.status == "Completed"))
                                 {
                                     <div class="review-box">
                                         <div class="review-header">

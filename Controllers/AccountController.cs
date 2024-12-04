@@ -15,16 +15,12 @@ namespace MvcMovie.Controllers
 
         public IActionResult Index()
         {
-            var viewModel = new ReviewIndex
-            {
-                Reviews = _context.Reviews?.ToList() ?? new List<Review>(),
-                NewReview = new Review()
-            };
+            var reviews = _context.Reviews?.ToList() ?? new List<Review>();
 
             TempData["Success"] = null;
             TempData["Error"] = null;
 
-            return View(viewModel);
+            return View(reviews);
         }
 
         [HttpPost]
