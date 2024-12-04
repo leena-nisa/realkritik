@@ -341,7 +341,7 @@ body{
 }
 
 #reviewDetailModal{
-    display: flex;
+    display: none;
     color: aliceblue;
     position: fixed;
     top: 50%;
@@ -351,12 +351,19 @@ body{
     padding: 20px;
     border: 1px solid rgb(204, 204, 204);
     z-index: 1000;
-    width: 50%;
-    justify-content: space-between;
+    /* width: 50%; */
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+    height: 200;
+    /* max-width: 550px; */
+    min-width: 550px;
 }
 
 #reviewDetailModal img{
     float:left;
+    position: relative;
+    /* margin-left: -200; */
+    padding-right: 10;
 }
 
 #reviewDetailModal #reviewDetailTitle{
@@ -365,10 +372,18 @@ body{
 }
 
 #reviewDetailDescription{
-    float:right;
+    /* float:right; */
+    max-width: 380;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    padding-right: 10px;
 }
 
 .reviewBlock{
     display: grid;
-    margin-left: -180px;
+    /* margin-left: -180px; */
+    position: relative;
+    /* align-content: flex-start; */
+    padding-right: 20;
+    padding-top: 5;
 }
